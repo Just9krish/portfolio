@@ -1,3 +1,5 @@
+@import "./styles/vendors/bootstrap";
+
 @import "./styles/abstracts/mixins";
 @import "./styles/abstracts/helper";
 @import "./styles/abstracts/variables";
@@ -10,4 +12,6 @@
 
 @import "./styles/layouts/sections";
 
-@import "./styles//sections/hero";
+@import "./styles/sections/hero";
+@import "./styles/sections/about";
+@import "./styles/sections/projects";
