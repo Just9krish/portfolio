@@ -20,11 +20,14 @@ export default function About() {
           <div className="col-md-6 col-sm-12">
             <div className="about-wrapper__info load-hidden">
               <p className="about-wrapper__info-text">
-                This is where you can describe about yourself. The more you
-                describe about yourself, the more chances you have!
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Numquam harum debitis error veniam illo iste officiis.
+                Consequatur corrupti voluptate eos nulla voluptates aut
+                architecto nihil quo earum magnam, ipsum ipsa.
               </p>
               <p className="about-wrapper__info-text">
-                Extra Information about you! like hobbies and your goals.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam,
+                amet?
               </p>
               <span className="d-flex mt-3">
                 <a
