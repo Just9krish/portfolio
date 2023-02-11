@@ -18,17 +18,25 @@ export default function Project(props) {
               provident voluptatibus error dolorum alias?
             </p>
           </div>
-          <a href={props.obj.live} className="cta-btn cta-btn--hero">
+          <a
+            href={props.obj.live}
+            target="_blank"
+            className="cta-btn cta-btn--hero"
+          >
             See live
           </a>
-          <a href={props.obj.repo} className="cta-btn cta-btn--main">
+          <a
+            href={props.obj.repo}
+            target="_blank"
+            className="cta-btn cta-btn--main"
+          >
             Souce code
           </a>
         </div>
       </div>
       <div className="col-lg-8 col-sm-12">
         <div className="project-wrapper__image load-hidden">
-          <a href="#">
+          <a href="#" target="_blank">
             <div className="thumbnail rounded">
               <img src={props.obj.image} alt="" className="img-fluid" />
             </div>
