@@ -12,13 +12,13 @@ export default function Blogs() {
           _id,
           coverImage,
           brief,
-          
         }
       }
     }
   }`;
+  console.log(JSON.stringify());
 
-  const [post, setPost] = useState([]);
+  const [posts, setPosts] = useState([]);
 
   async function fetchPost() {
     try {
@@ -31,7 +31,7 @@ export default function Blogs() {
       });
 
       const postsData = await response.json();
-      setPost(postsData.data.user.publication.posts);
+      setPosts(postsData.data.user.publication.posts);
     } catch (err) {
       console.log(err);
     }
@@ -41,13 +41,30 @@ export default function Blogs() {
     fetchPost();
   }, []);
 
-  console.log(post);
-
   return (
     <section id="posts">
       <div className="container">
         <h2 className="section-title">Recent Posts</h2>
-        <div className="contact-"></div>
+        {posts.length > 0 ? (
+          posts.map((post) => (
+            <div className="blog">
+              <div className="blog__header">
+                <img
+                  src={post.coverImage}
+                  alt="Post Cover Image"
+                  className="blog__image"
+                />
+              </div>
+              <div className="blog__body">
+                <span className="tag tag-blue">Technology</span>
+                <h4>{post.title}</h4>
+                <p>{post.brief}</p>
+              </div>
+            </div>
+          ))
+        ) : (
+          <></>
+        )}
       </div>
     </section>
   );

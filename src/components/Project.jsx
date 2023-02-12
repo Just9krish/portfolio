@@ -3,7 +3,7 @@ import img from "../assets/project-img.jpg";
 export default function Project(props) {
   return (
     <div className="row">
-      <div className="col-lg-4 col-sm--12">
+      <div className="col-lg-4 col-sm-12">
         <div className="project-wrapper__text load-hidden">
           <h3 className="project-wrapper__text-title">{props.obj.name}</h3>
           <div>

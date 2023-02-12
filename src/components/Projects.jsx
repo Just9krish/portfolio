@@ -10,7 +10,7 @@ export default function Projects() {
     <section id="projects">
       <div className="container">
         <div className="project-wrapper">
-          <h2 className="section-title dar-blue-text">Projects</h2>
+          <h2 className="section-title dark-blue-text">Projects</h2>
           {Data.length > 0 ? (
             Data.map((obj) => <Project obj={obj} key={obj.id} />)
           ) : (
