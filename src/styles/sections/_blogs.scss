@@ -1,2 +1,75 @@
 #posts {
+  background-color: $white-color;
+  color: $dark-blue-text;
+  margin-top: -10rem;
+  padding-top: 15rem;
+
+  .posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1280px;
+    margin: 0 auto;
+
+    @include respond(tab-land) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(phone) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .post {
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid red;
+
+      .post-header {
+        &__image {
+          height: 300px;
+          max-width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .post-body {
+        text-align: left;
+        padding-inline: 2rem;
+        padding-block: 3rem;
+
+        &__info {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          &-tag {
+            background: blue;
+            padding: 5px;
+            color: $white-color;
+            border-radius: 12px;
+          }
+
+          &-date {
+            margin: 0;
+            span {
+              margin-right: 0.6rem;
+            }
+          }
+        }
+
+        &__title {
+          font-size: 2rem;
+          margin-block: $mid-font-size;
+          text-decoration: underline;
+          font-weight: bold;
+          color: $primary-color;
+        }
+
+        &__brief {
+          font-weight: 400;
+        }
+      }
+    }
+  }
 }

@@ -1,22 +1,28 @@
-import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGithub,
+  faLinkedin,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
 export default function Footer() {
   return (
     <footer className="footer navbar-static-bottom">
       <div className="container">
         <a href="#top" className="back-to-top">
-          <i class="fas fa-angle-up" aria-hidden="true"></i>
+          <FontAwesomeIcon icon={faAngleUp} />
         </a>
 
         <div className="social-links">
           <a href="#" target="_blank">
-            <i className="fab fa-github"></i>
+            <FontAwesomeIcon icon={faGithub} />
           </a>
           <a href="#" target="_blank">
-            <i className="fab fa-linkedin"></i>
+            <FontAwesomeIcon icon={faLinkedin} />
           </a>
           <a href="#" target="_blank">
-            <i className="fab fa-twitter"></i>
+            <FontAwesomeIcon icon={faTwitter} />
           </a>
         </div>
         <hr />

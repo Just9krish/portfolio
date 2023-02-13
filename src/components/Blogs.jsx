@@ -1,5 +1,6 @@
-import React from "react";
 import { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 
 export default function Blogs() {
   const query = `{
@@ -16,7 +17,6 @@ export default function Blogs() {
       }
     }
   }`;
-  console.log(JSON.stringify());
 
   const [posts, setPosts] = useState([]);
 
@@ -44,27 +44,39 @@ export default function Blogs() {
   return (
     <section id="posts">
       <div className="container">
-        <h2 className="section-title">Recent Posts</h2>
-        {posts.length > 0 ? (
-          posts.map((post) => (
-            <div className="blog">
-              <div className="blog__header">
-                <img
-                  src={post.coverImage}
-                  alt="Post Cover Image"
-                  className="blog__image"
-                />
+        <h2 className="section-title dark-blue-text">Recent Posts</h2>
+        <div className="posts">
+          {posts.length > 0 ? (
+            posts.map((post) => (
+              <div className="post">
+                <div className="post-header">
+                  <img
+                    src={post.coverImage}
+                    className="post-header__image"
+                    alt="Post Cover Image"
+                  />
+                </div>
+                <div className="post-body">
+                  <div className="post-body__info">
+                    <span className="post-body__info-tag">Technology</span>
+                    <p className="post-body__info-date">
+                      <span>
+                        <FontAwesomeIcon icon={faCalendar} />
+                      </span>
+                      {new Date(post.dateAdded).toLocaleDateString()}
+                    </p>
+                  </div>
+                  <h4 className="post-body__title">{post.title}</h4>
+                  <div>
+                    <p className="post-body__brief">{post.brief}</p>
+                  </div>
+                </div>
               </div>
-              <div className="blog__body">
-                <span className="tag tag-blue">Technology</span>
-                <h4>{post.title}</h4>
-                <p>{post.brief}</p>
-              </div>
-            </div>
-          ))
-        ) : (
-          <></>
-        )}
+            ))
+          ) : (
+            <></>
+          )}
+        </div>
       </div>
     </section>
   );
