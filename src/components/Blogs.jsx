@@ -48,7 +48,7 @@ export default function Blogs() {
         <h2 className="section-title dark-blue-text">Recent Posts</h2>
         <div className="posts">
           {posts.length > 0 ? (
-            posts.map((post) => (
+            posts.slice(0, 7).map((post) => (
               <div className="post">
                 <div className="post-header">
                   <img
@@ -58,7 +58,11 @@ export default function Blogs() {
                   />
                 </div>
                 <div className="post-body">
-                  <a href="#" className="post-body__title">
+                  <a
+                    href={`https://just9krish.hashnode.dev/${post.slug}`}
+                    target="_blank"
+                    className="post-body__title"
+                  >
                     {post.title}
                   </a>
                   <div>
@@ -73,7 +77,7 @@ export default function Blogs() {
                         addSuffix: true,
                       })}
                     </p>
-                    <span className="post-body__info-tag">React</span>
+                    <button className="post-body__info-tag">React</button>
                   </div>
                 </div>
               </div>

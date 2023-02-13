@@ -15,13 +15,13 @@ export default function Footer() {
         </a>
 
         <div className="social-links">
-          <a href="#" target="_blank">
+          <a href="https://github.com/Just9krish" target="_blank">
             <FontAwesomeIcon icon={faGithub} />
           </a>
-          <a href="#" target="_blank">
+          <a href="https://www.linkedin.com/in/rvamit2648/" target="_blank">
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
-          <a href="#" target="_blank">
+          <a href="https://twitter.com/rvamit2648" target="_blank">
             <FontAwesomeIcon icon={faTwitter} />
           </a>
         </div>
