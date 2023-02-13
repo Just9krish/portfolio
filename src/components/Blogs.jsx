@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
+import { formatDistanceToNow } from "date-fns";
 
 export default function Blogs() {
   const query = `{
@@ -57,18 +58,22 @@ export default function Blogs() {
                   />
                 </div>
                 <div className="post-body">
+                  <a href="#" className="post-body__title">
+                    {post.title}
+                  </a>
+                  <div>
+                    <p className="post-body__brief">{post.brief}</p>
+                  </div>
                   <div className="post-body__info">
-                    <span className="post-body__info-tag">Technology</span>
                     <p className="post-body__info-date">
                       <span>
                         <FontAwesomeIcon icon={faCalendar} />
                       </span>
-                      {new Date(post.dateAdded).toLocaleDateString()}
+                      {formatDistanceToNow(new Date(post.dateAdded), {
+                        addSuffix: true,
+                      })}
                     </p>
-                  </div>
-                  <h4 className="post-body__title">{post.title}</h4>
-                  <div>
-                    <p className="post-body__brief">{post.brief}</p>
+                    <span className="post-body__info-tag">React</span>
                   </div>
                 </div>
               </div>
