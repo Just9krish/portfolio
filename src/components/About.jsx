@@ -32,10 +32,10 @@ export default function About() {
               </p>
               <ul className="about-wrapper__info-skills">
                 <li className="about-wrapper__info-skill">Javascript (ES6+)</li>
-                <li className="about-wrapper__info-skill">Typescript</li>
-                <li className="about-wrapper__info-skill">React.js</li>
                 <li className="about-wrapper__info-skill">Node.js</li>
+                <li className="about-wrapper__info-skill">Typescript</li>
                 <li className="about-wrapper__info-skill">Express.js</li>
+                <li className="about-wrapper__info-skill">React.js</li>
                 <li className="about-wrapper__info-skill">MongoDB</li>
               </ul>
 

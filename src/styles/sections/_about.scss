@@ -87,10 +87,10 @@
       }
 
       &-skill::before {
-        content: "▹"; /* Add a custom marker, in this case a checkmark */
-        color: white; /* Change the color of the marker */
-        font-size: 1.2em; /* Change the size of the marker */
-        margin-right: 0.5em; /* Add a margin to separate the marker from the text */
+        content: "▹";
+        color: white;
+        font-size: 1.2em;
+        margin-right: 0.5em;
       }
     }
   }

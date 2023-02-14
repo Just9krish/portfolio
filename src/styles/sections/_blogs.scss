@@ -8,7 +8,7 @@
   .posts {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.3rem;
+    gap: 4.2rem;
     max-width: 1280px;
     margin: 0 auto;
 
@@ -24,7 +24,6 @@
       border-radius: 1rem;
       overflow: hidden;
       border: 2px solid $secondary-color;
-
       -webkit-transform: perspective(1px) translateZ(0);
       transform: perspective(1px) translateZ(0);
       box-shadow: 5px 5px 2px $secondary-color;
@@ -40,7 +39,7 @@
 
       .post-header {
         &__image {
-          height: 275px;
+          height: 265px;
           max-width: 100%;
           object-fit: cover;
         }
@@ -49,8 +48,8 @@
       .post-body {
         text-align: left;
         padding-inline: 3.5rem;
-        padding-top: 1rem;
-        padding-bottom: 2rem;
+        padding-top: 0.8rem;
+        padding-bottom: 1.5rem;
 
         &__info {
           display: flex;
@@ -71,6 +70,7 @@
           &-date {
             margin: 0;
             line-height: 1;
+
             span {
               margin-right: 0.7rem;
             }
@@ -78,7 +78,7 @@
         }
 
         &__title {
-          font-size: 2rem;
+          font-size: $default-font-size;
           margin-block: 1.7rem;
           text-decoration: underline;
           color: $primary-color;
@@ -87,6 +87,7 @@
         }
 
         &__brief {
+          font-size: 1.3rem;
           font-weight: 400;
         }
       }
