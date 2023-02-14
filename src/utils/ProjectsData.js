@@ -12,7 +12,7 @@ export const Data = [
     image: quizDesktop,
     id: 1,
     brief:
-      "The Quizzical is a React-based web app that allows users to test their knowledge with a variety of different questions. Users can customize their quiz by specifying the number of questions they want to answer, the type of questions (e.g. multiple choice, true/false), and the level of difficulty. The app fetches all of the question data from the OpenDB API, ensuring that the questions are up-to-date and accurate. The user-friendly interface makes it easy for users to navigate and select their preferred quiz settings.",
+      "The Quizzical is a React-based quiz app that lets users customize the number, type, and difficulty of questions they want to answer. It fetches all of the questions from the OpenDB API and has an easy-to-use interface, making it the perfect choice for anyone looking to test their knowledge.",
   },
   {
     name: "Just9blogs: A Blog Website",

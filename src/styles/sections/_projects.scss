@@ -38,6 +38,11 @@
         box-shadow: 8px 8px 2px $secondary-color;
       }
 
+      @include respond(phone) {
+        flex-direction: column;
+        padding: 3rem 3.3rem;
+      }
+
       &__text {
         text-align: left;
 
@@ -83,7 +88,6 @@
           @include respond(phone) {
             border: 1px solid $light-grey;
             box-shadow: none;
-            margin-bottom: 3.2rem;
           }
         }
       }
