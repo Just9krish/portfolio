@@ -2,21 +2,12 @@ import React from "react";
 import img from "../assets/project-img.jpg";
 export default function Project(props) {
   return (
-    <div className="row">
-      <div className="col-lg-4 col-sm-12">
-        <div className="project-wrapper__text load-hidden">
-          <h3 className="project-wrapper__text-title">{props.obj.name}</h3>
+    <div className="project">
+      <div className="col-lg-6 col-sm-12">
+        <div className="project__text load-hidden">
+          <h3 className="project__text-title">{props.obj.name}</h3>
           <div>
-            <p className="mb-4">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Perspiciatis officiis culpa sapiente perferendis expedita aut?
-              Repellendus quam aut magni ipsa, molestiae numquam vitae error,
-              labore commodi ad minima reiciendis officiis. Lorem ipsum dolor
-              sit amet consectetur adipisicing elit. Accusantium exercitationem
-              voluptates veritatis ducimus? Ut laudantium aliquam dolor, nihil
-              esse, impedit voluptates repudiandae aperiam architecto sunt
-              provident voluptatibus error dolorum alias?
-            </p>
+            <p className="mb-4">{props.obj.brief}</p>
           </div>
           <a
             href={props.obj.live}
@@ -34,8 +25,8 @@ export default function Project(props) {
           </a>
         </div>
       </div>
-      <div className="col-lg-8 col-sm-12">
-        <div className="project-wrapper__image load-hidden">
+      <div className="col-lg-6 col-sm-12">
+        <div className="project__image load-hidden">
           <a href="#" target="_blank">
             <div className="thumbnail rounded">
               <img src={props.obj.image} alt="" className="img-fluid" />
