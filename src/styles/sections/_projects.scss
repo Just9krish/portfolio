@@ -9,67 +9,126 @@
     padding-top: 5rem;
   }
 
-  .project-wrapper {
-    margin-bottom: 15rem;
+  .projects-wrapper {
+    margin-bottom: 10rem;
+    max-width: 1000px;
+    margin-inline: auto;
 
     @include respond(phone) {
       margin-bottom: 0rem;
     }
+
+    .project {
+      display: flex;
+      align-items: center;
+      border-radius: 1rem;
+      padding: 3rem 5.4rem;
+      overflow: hidden;
+      border: 2px solid $secondary-color;
+      -webkit-transform: perspective(1px) translateZ(0);
+      transform: perspective(1px) translateZ(0);
+      box-shadow: 5px 5px 2px $secondary-color;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-property: box-shadow;
+      transition-property: box-shadow;
+
+      &:hover,
+      &:focus {
+        box-shadow: 8px 8px 2px $secondary-color;
+      }
+
+      &__text {
+        text-align: left;
+
+        @include respond(phone) {
+          margin-bottom: 2.5rem !important;
+        }
+
+        @include respond(tab-land) {
+          margin-bottom: 4.8rem;
+        }
+
+        &-title {
+          font-weight: bold;
+          margin-bottom: 1.8rem;
+          font-size: $mid-font-size;
+
+          @include respond(phone) {
+            font-size: 2rem;
+          }
+        }
+
+        & p > a {
+          color: $secondary-color;
+        }
+      }
+
+      &__image {
+        width: 90%;
+        margin: 0 auto;
+        border-radius: 10px;
+        overflow: hidden;
+
+        @include respond(tab-land) {
+          width: 100%;
+          margin: 0;
+        }
+
+        & .thumbnail {
+          border: none;
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+            0 3px 6px rgba(0, 0, 0, 0.23);
+
+          @include respond(phone) {
+            border: 1px solid $light-grey;
+            box-shadow: none;
+            margin-bottom: 3.2rem;
+          }
+        }
+      }
+    }
+
+    .project + .project {
+      margin-top: 4rem;
+    }
+
     .row {
       margin-bottom: 8rem;
+      align-items: center;
 
       @include respond(phone) {
         margin-bottom: 4rem;
       }
     }
-
-    &__text {
-      text-align: left;
-
-      @include respond(phone) {
-        margin-bottom: 2.5rem !important;
-      }
-
-      @include respond(tab-land) {
-        margin-bottom: 4.8rem;
-      }
-
-      &-title {
-        font-weight: bold;
-        margin-bottom: 1.8rem;
-        font-size: $mid-font-size;
-
-        @include respond(phone) {
-          font-size: 2rem;
-        }
-      }
-
-      & p > a {
-        color: $secondary-color;
-      }
-    }
-
-    &__image {
-      width: 90%;
-      margin: 0 auto;
-      border-radius: 10px;
-      overflow: hidden;
-
-      @include respond(tab-land) {
-        width: 100%;
-        margin: 0;
-      }
-
-      & .thumbnail {
-        border: none;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-
-        @include respond(phone) {
-          border: 1px solid $light-grey;
-          box-shadow: none;
-          margin-bottom: 3.2rem;
-        }
-      }
-    }
   }
 }
+
+// #projects {
+//   background-color: $white-color;
+//   color: $dark-blue-text;
+//   margin-top: -10rem;
+//   padding-top: 15rem;
+
+//   @include respond(tab-land) {
+//     margin-top: 0;
+//     padding-top: 5rem;
+//   }
+
+//   .projects-wrapper {
+//     margin-bottom: 15rem;
+//     display: grid;
+//     grid-template-columns: repeat();
+
+//     @include respond(phone) {
+//       margin-bottom: 0rem;
+//     }
+//     .row {
+//       margin-bottom: 8rem;
+
+//       @include respond(phone) {
+//         margin-bottom: 4rem;
+//       }
+//     }
+//   }
+// }
