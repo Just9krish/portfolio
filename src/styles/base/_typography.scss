@@ -24,30 +24,8 @@ a:hover {
 
 .section-title {
   margin: 0px;
-  margin-bottom: 4.5rem;
-  font-size: $big-font-size;
-  font-weight: bold;
-  text-transform: uppercase;
-
-  @include respond(phone) {
-    font-size: 2.8rem;
-  }
 }
 
 .dark-blue-text {
   color: $dark-blue-text !important;
-}
-
-.text-color-main {
-  @include supportColorForIE11();
-
-  // Responsive text purple style
-  @include respond(phone) {
-    background-image: none;
-    -webkit-text-fill-color: $secondary-color;
-  }
-
-  &:hover {
-    transform: translateX(2px);
-  }
 }
