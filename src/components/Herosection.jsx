@@ -1,8 +1,8 @@
 export default function Herosection() {
   return (
-    <section id="hero" className="jumbotron">
+    <section id="hero">
       <div className="container">
-        <h1 className="hero-title load-hidden">
+        <h1 className="hero-title">
           Hi, my name is
           <span className="text-color-main"> Amit Vishwakarma</span>
           <br />
