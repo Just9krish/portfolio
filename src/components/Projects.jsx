@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Data } from "../utils/ProjectsData";
 import Project from "./Project";
 

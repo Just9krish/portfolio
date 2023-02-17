@@ -1,76 +1,3 @@
-// @import "../../styles/abstracts/mixins";
-// @import "../../styles/abstracts/variables";
-// @import "../../styles/layouts/sections";
-
-// #hero {
-//   min-height: 100vh;
-//   height: 100vh;
-//   display: flex;
-//   align-items: center;
-//   border-bottom: 0px;
-//   background: $white-color;
-//   font-weight: 400;
-//   color: $dark-blue-text;
-//   padding: 0rem 5.6rem;
-//   margin-bottom: 0;
-//   top: 0;
-//   left: 0;
-//   bottom: 0;
-//   right: 0;
-//   z-index: -1;
-
-//   // Set position sticky so the jumbotron stays fixed while you scroll.
-//   // position: sticky;
-
-//   // If you want to set a background image on the hero section, uncomment these with your custom image
-
-//   /* background: url("/src/assets/[your-image].png");
-//     background-position: center;
-//     background-size: cover; */
-
-//   @include respond(phone) {
-//     padding: 0rem $default-font-size;
-//   }
-
-//   .hero-title {
-//     font-size: 5.6rem;
-//     font-weight: 700;
-//     margin-bottom: 3.2rem;
-//     text-align: left;
-
-//     @include respond(tab-land) {
-//       font-size: 4rem;
-//     }
-//     @include respond(tab-port) {
-//       font-size: 3.6rem;
-//       text-align: center;
-//     }
-//     @include respond(phone) {
-//       font-size: 3.5rem;
-//       line-height: 1.5;
-//     }
-//     @include respond(phone-xs) {
-//       font-size: 2.8rem;
-//     }
-//   }
-
-//   .hero-cta {
-//     display: flex;
-
-//     @include respond(tab-port) {
-//       justify-content: center;
-//     }
-
-//     & a {
-//       font-size: 2.4rem;
-
-//       @include respond(phone) {
-//         font-size: 2rem;
-//       }
-//     }
-//   }
-// }
-
 #hero {
   min-height: 100vh;
   display: flex;
@@ -78,11 +5,6 @@
   padding: 0 $default-font-size;
   background-color: $white-color;
   color: $dark-blue-text;
-  text-align: left;
-
-  @include breakpoints(medium) {
-    text-align: center;
-  }
 
   @include breakpoints(large) {
     padding-inline: rem(89);
@@ -93,6 +15,7 @@
     line-height: 1.3;
     font-weight: 700;
     margin-bottom: rem(51);
+    text-align: left;
 
     @include breakpoints(small) {
       font-size: rem(56);
@@ -106,8 +29,25 @@
     @include breakpoints(large) {
       font-size: rem(90);
     }
+
+    .text-color-main {
+      color: $primary-color;
+    }
   }
 
   .hero-cta {
+    text-align: center;
+
+    @include breakpoints(large) {
+      text-align: left;
+    }
+
+    & a {
+      font-size: rem(32);
+
+      @include breakpoints(medium) {
+        font-size: rem(35);
+      }
+    }
   }
 }

@@ -1,7 +1,4 @@
 section {
   padding-inline: 1rem;
-
-  @include breakpoints(medium) {
-    padding-block: 5rem;
-  }
+  padding-block: 5rem;
 }

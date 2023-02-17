@@ -4,6 +4,26 @@ h1 {
   font-weight: 700;
 }
 
+img {
+  max-width: 100%;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin-bottom: rem(16);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: rem(16);
+}
+
 p,
 a {
   font-family: "Montserrat", sans-serif;
@@ -22,8 +42,42 @@ a:hover {
   transition: all 0.3s ease-in-out;
 }
 
+.container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: rem(16);
+
+  @media (min-width: 576px) {
+    max-width: 540px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+
+  @media (min-width: 1400px) {
+    max-width: 1320px;
+  }
+}
+
 .section-title {
   margin: 0px;
+  font-size: rem(45);
+  margin-bottom: rem(77);
+  font-weight: 700;
+  text-transform: uppercase;
+
+  @include breakpoints(medium) {
+    font-size: rem(64);
+  }
 }
 
 .dark-blue-text {
