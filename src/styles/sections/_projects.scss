@@ -1,128 +1,11 @@
-// #projects {
-//   background-color: $white-color;
-//   color: $dark-blue-text;
-//   margin-top: -10rem;
-//   padding-top: 15rem;
-
-//   @include respond(tab-land) {
-//     margin-top: 0;
-//     padding-top: 5rem;
-//   }
-
-//   .projects-wrapper {
-//     margin-bottom: 10rem;
-//     max-width: 1000px;
-//     margin-inline: auto;
-
-//     @include respond(tab-land) {
-//       max-width: 680px;
-//     }
-
-//     @include respond(phone) {
-//       margin-bottom: 0rem;
-//     }
-
-//     .project {
-//       display: flex;
-//       align-items: center;
-//       justify-content: space-between;
-//       border-radius: 1rem;
-//       padding: 3rem 5.4rem;
-//       overflow: hidden;
-//       border: 2px solid $secondary-color;
-//       -webkit-transform: perspective(1px) translateZ(0);
-//       transform: perspective(1px) translateZ(0);
-//       box-shadow: 5px 5px 2px $secondary-color;
-//       -webkit-transition-duration: 0.3s;
-//       transition-duration: 0.3s;
-//       -webkit-transition-property: box-shadow;
-//       transition-property: box-shadow;
-
-//       &:hover,
-//       &:focus {
-//         box-shadow: 8px 8px 2px $secondary-color;
-//       }
-
-//       @include respond(tab-land) {
-//         flex-direction: column;
-//         padding: 3rem 3.3rem;
-//       }
-
-//       &__text {
-//         text-align: left;
-//         width: 45%;
-
-//         @include respond(phone) {
-//           margin-bottom: 2.5rem !important;
-//         }
-
-//         @include respond(tab-land) {
-//           margin-bottom: 4.8rem;
-//           width: 100%;
-//         }
-
-//         &-title {
-//           font-weight: bold;
-//           margin-bottom: 1.8rem;
-//           font-size: $mid-font-size;
-
-//           @include respond(phone) {
-//             font-size: 2rem;
-//           }
-//         }
-
-//         & p > a {
-//           color: $secondary-color;
-//         }
-//       }
-
-//       &__image {
-//         width: 45%;
-//         margin: 0 auto;
-//         border-radius: 10px;
-//         overflow: hidden;
-
-//         @include respond(tab-land) {
-//           width: 100%;
-//           margin: 0;
-//         }
-
-//         & .thumbnail {
-//           border: none;
-//           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
-//             0 3px 6px rgba(0, 0, 0, 0.23);
-
-//           @include respond(phone) {
-//             border: 1px solid $light-grey;
-//             box-shadow: none;
-//           }
-//         }
-//       }
-//     }
-
-//     .project + .project {
-//       margin-top: 4rem;
-//     }
-
-//     .row {
-//       margin-bottom: 8rem;
-//       align-items: center;
-
-//       @include respond(phone) {
-//         margin-bottom: 4rem;
-//       }
-//     }
-//   }
-// }
-
 #projects {
   background-color: $white-color;
   color: $dark-blue-text;
-  padding-top: rem(80);
+  padding: rem(80) 0;
 
   @include breakpoints(large) {
     margin-top: rem(-160);
-    padding-top: rem(150);
+    padding-top: rem(240);
   }
 
   .projects-wrapper {
@@ -139,6 +22,7 @@
       flex-direction: column-reverse;
       border-radius: rem(16);
       padding: rem(48) rem(53);
+      gap: rem(29);
       overflow: hidden;
       border: 2px solid $secondary-color;
       -webkit-transform: perspective(1px) translateZ(0);
@@ -159,6 +43,45 @@
         justify-content: space-between;
         flex-direction: row;
         padding: rem(48) rem(86);
+      }
+
+      &__text {
+        margin-block: rem(30);
+
+        @include breakpoints(medium) {
+          text-align: left;
+        }
+
+        &-title {
+          font-size: rem(32);
+          font-weight: bold;
+          margin-bottom: rem(29);
+
+          @include breakpoints(large) {
+            font-size: $mid-font-size;
+          }
+        }
+
+        & p {
+          font-size: rem(23);
+
+          @include breakpoints(large) {
+            font-size: rem(28);
+          }
+        }
+
+        & p > a {
+          color: $secondary-color;
+        }
+      }
+
+      &__image {
+        border-radius: rem(9);
+        overflow: hidden;
+
+        & img {
+          object-fit: cover;
+        }
       }
     }
 

@@ -23,12 +23,8 @@ export default function Project(props) {
           Souce code
         </a>
       </div>
-      <div className="project__image load-hidden">
-        <a href="#" target="_blank">
-          <div className="thumbnail rounded">
-            <img src={props.obj.image} alt="" className="img-fluid" />
-          </div>
-        </a>
+      <div className="project__image">
+        <img src={props.obj.image} alt="" className="img-fluid" />
       </div>
     </div>
   );
