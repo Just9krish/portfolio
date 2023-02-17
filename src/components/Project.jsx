@@ -8,20 +8,22 @@ export default function Project(props) {
         <div>
           <p className="mb-4">{props.obj.brief}</p>
         </div>
-        <a
-          href={props.obj.live}
-          target="_blank"
-          className="cta-btn cta-btn--hero"
-        >
-          See live
-        </a>
-        <a
-          href={props.obj.repo}
-          target="_blank"
-          className="cta-btn cta-btn--main"
-        >
-          Souce code
-        </a>
+        <div>
+          <a
+            href={props.obj.live}
+            target="_blank"
+            className="cta-btn cta-btn--hero"
+          >
+            See live
+          </a>
+          <a
+            href={props.obj.repo}
+            target="_blank"
+            className="cta-btn cta-btn--main"
+          >
+            Souce code
+          </a>
+        </div>
       </div>
       <div className="project__image">
         <img src={props.obj.image} alt="" className="img-fluid" />

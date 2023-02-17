@@ -9,17 +9,19 @@
   }
 
   .projects-wrapper {
-    max-width: 680px;
+    max-width: 580px;
+    margin: 0 auto;
 
     @include breakpoints(large) {
       margin-bottom: 10rem;
-      max-width: 1000px;
+      max-width: 870px;
       margin-inline: auto;
     }
 
     .project {
       display: flex;
       flex-direction: column-reverse;
+      justify-content: space-between;
       border-radius: rem(16);
       padding: rem(48) rem(53);
       gap: rem(29);
@@ -38,7 +40,7 @@
         box-shadow: 8px 8px 2px $secondary-color;
       }
 
-      @include breakpoints(medium) {
+      @include breakpoints(large) {
         align-items: center;
         justify-content: space-between;
         flex-direction: row;
@@ -48,14 +50,16 @@
       &__text {
         margin-block: rem(30);
 
-        @include breakpoints(medium) {
+        @include breakpoints(large) {
           text-align: left;
+          width: 55%;
+          margin-block: 0;
         }
 
         &-title {
           font-size: rem(32);
           font-weight: bold;
-          margin-bottom: rem(29);
+          margin: 0;
 
           @include breakpoints(large) {
             font-size: $mid-font-size;
@@ -63,10 +67,11 @@
         }
 
         & p {
-          font-size: rem(23);
+          font-size: rem(20);
+          margin-block: rem(27);
 
           @include breakpoints(large) {
-            font-size: rem(28);
+            font-size: rem(23);
           }
         }
 
@@ -78,6 +83,10 @@
       &__image {
         border-radius: rem(9);
         overflow: hidden;
+
+        @include breakpoints(large) {
+          width: 40%;
+        }
 
         & img {
           object-fit: cover;

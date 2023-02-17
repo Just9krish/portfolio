@@ -1,96 +1,98 @@
-// #posts {
-//   background-color: $white-color;
-//   color: $dark-blue-text;
-//   margin-top: -10rem;
-//   padding-top: 15rem;
-//   padding-bottom: 15rem;
+#posts {
+  background-color: $white-color;
+  color: $dark-blue-text;
 
-//   .posts {
-//     display: grid;
-//     grid-template-columns: repeat(3, 1fr);
-//     gap: 4.2rem;
-//     max-width: 1280px;
-//     margin: 0 auto;
+  @include breakpoints(large) {
+    margin-top: rem(-160);
+    padding-block: rem(240);
+  }
 
-//     @include respond(tab-land) {
-//       grid-template-columns: repeat(2, 1fr);
-//     }
+  .posts {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 1280px;
+    gap: rem(20);
 
-//     @include respond(phone) {
-//       grid-template-columns: repeat(1, 1fr);
-//     }
+    @include breakpoints(medium) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4.2rem;
+    }
 
-//     .post {
-//       border-radius: 1rem;
-//       overflow: hidden;
-//       border: 2px solid $secondary-color;
-//       -webkit-transform: perspective(1px) translateZ(0);
-//       transform: perspective(1px) translateZ(0);
-//       box-shadow: 5px 5px 2px $secondary-color;
-//       -webkit-transition-duration: 0.3s;
-//       transition-duration: 0.3s;
-//       -webkit-transition-property: box-shadow;
-//       transition-property: box-shadow;
+    @include breakpoints(large) {
+      grid-template-columns: repeat(3, 1fr);
+    }
 
-//       &:hover,
-//       &:focus {
-//         box-shadow: 8px 8px 2px $secondary-color;
-//       }
+    .post {
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 2px solid $secondary-color;
+      -webkit-transform: perspective(1px) translateZ(0);
+      transform: perspective(1px) translateZ(0);
+      box-shadow: 5px 5px 2px $secondary-color;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-property: box-shadow;
+      transition-property: box-shadow;
 
-//       .post-header {
-//         &__image {
-//           height: 265px;
-//           max-width: 100%;
-//           object-fit: cover;
-//         }
-//       }
+      &:hover,
+      &:focus {
+        box-shadow: 8px 8px 2px $secondary-color;
+      }
 
-//       .post-body {
-//         text-align: left;
-//         padding-inline: 3.5rem;
-//         padding-top: 0.8rem;
-//         padding-bottom: 1.5rem;
+      .post-header {
+        &__image {
+          height: 265px;
+          max-width: 100%;
+          object-fit: cover;
+        }
+      }
 
-//         &__info {
-//           display: flex;
-//           justify-content: space-between;
-//           align-items: center;
+      .post-body {
+        text-align: left;
+        padding-inline: 3.5rem;
+        padding-top: 0rem;
+        padding-bottom: 1.5rem;
 
-//           &-tag {
-//             font-size: 14px;
-//             padding: 0.3em 1em;
-//             margin: 0.25em;
-//             border-radius: 1em;
-//             border: none;
-//             outline: none;
-//             background-color: slategrey;
-//             color: $white-color;
-//           }
+        &__info {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
 
-//           &-date {
-//             margin: 0;
-//             line-height: 1;
+          &-tag {
+            font-size: 14px;
+            padding: 0.3em 1em;
+            margin: 0.25em;
+            border-radius: 1em;
+            border: none;
+            outline: none;
+            background-color: slategrey;
+            color: $white-color;
+          }
 
-//             span {
-//               margin-right: 0.7rem;
-//             }
-//           }
-//         }
+          &-date {
+            margin: 0;
+            line-height: 1;
 
-//         &__title {
-//           font-size: $default-font-size;
-//           margin-block: 1.7rem;
-//           text-decoration: underline;
-//           color: $primary-color;
-//           display: block;
-//           line-height: 1.2;
-//         }
+            span {
+              margin-right: 0.7rem;
+            }
+          }
+        }
 
-//         &__brief {
-//           font-size: 1.3rem;
-//           font-weight: 400;
-//         }
-//       }
-//     }
-//   }
-// }
+        &__title {
+          font-size: $default-font-size;
+          margin-block: 1.7rem;
+          text-decoration: underline;
+          color: $primary-color;
+          display: block;
+          line-height: 1.2;
+        }
+
+        &__brief {
+          font-size: 1.3rem;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

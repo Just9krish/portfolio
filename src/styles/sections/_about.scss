@@ -23,13 +23,19 @@
 
     &__image {
       flex: 0 0 auto;
-      overflow: hidden;
-      border-radius: rem(7);
-      box-shadow: 0 rem(16) rem(48) #0000002d;
       margin-bottom: rem(102);
 
       @include breakpoints(medium) {
         width: 40%;
+        margin: 0;
+      }
+
+      & img {
+        border-radius: rem(10);
+
+        @include breakpoints(medium) {
+          width: 340px;
+        }
       }
     }
 
@@ -40,8 +46,9 @@
       align-items: center;
 
       @include breakpoints(medium) {
+        align-items: flex-start;
         text-align: left;
-        width: 45%;
+        width: 50%;
       }
 
       &-skills {
@@ -53,13 +60,18 @@
         padding: 0;
         overflow: hidden;
       }
+
       &-skill {
         text-align: left;
+
         &::before {
           content: "\25b9";
           color: #fff;
           font-size: rem(20);
           margin-right: rem(10);
+          @include breakpoints(medium) {
+            font-size: rem(25);
+          }
         }
       }
 
