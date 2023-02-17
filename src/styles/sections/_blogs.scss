@@ -41,9 +41,16 @@
 
       .post-header {
         &__image {
-          height: 265px;
-          max-width: 100%;
+          height: 250px;
           object-fit: cover;
+
+          @include breakpoints(medium) {
+            height: 225px;
+          }
+
+          @include breakpoints(large) {
+            height: 265px;
+          }
         }
       }
 
