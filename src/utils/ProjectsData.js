@@ -11,6 +11,7 @@ export const Data = [
     live: "https://quizzicalapponline.netlify.app/",
     image: quizDesktop,
     id: 1,
+    techstack: ["js", "react", "tailwindss"],
     brief:
       "The Quizzical is a React-based quiz app that lets users customize the number, type, and difficulty of questions they want to answer. It fetches all of the questions from the OpenDB API and has an easy-to-use interface, making it the perfect choice for anyone looking to test their knowledge.",
   },
@@ -20,6 +21,7 @@ export const Data = [
     live: "https://quizzicalapponline.netlify.app/",
     image: quizDesktop,
     id: 2,
+    techstack: ["nodejs", "expressjs", "ejs", "mongodb", "mongoose", "css"],
     brief:
       "Just9blogs is a blog website that allows users to read blog posts on various topics, but only the administrator can manage the content. The administrator can add, update, and delete posts using their unique login credentials. The website is user-friendly and accessible for all types of users looking for informative content.",
   },

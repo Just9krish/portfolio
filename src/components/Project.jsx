@@ -1,12 +1,10 @@
-import React from "react";
-import img from "../assets/project-img.jpg";
 export default function Project(props) {
   return (
     <div className="project">
       <div className="project__text load-hidden">
         <h3 className="project__text-title">{props.obj.name}</h3>
         <div>
-          <p className="mb-4">{props.obj.brief}</p>
+          <p>{props.obj.brief}</p>
         </div>
         <div>
           <a

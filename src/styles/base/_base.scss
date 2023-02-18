@@ -1,5 +1,6 @@
 html {
-  font-size: 62.5%;
+  // font-size: 62.5%;
+  scroll-behavior: smooth;
 
   &.sr .load-hidden {
     visibility: hidden;
@@ -16,8 +17,8 @@ body {
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: rem(10);
+  height: rem(10);
 }
 ::-webkit-scrollbar-track {
   background: #f1f1f1;

@@ -1,39 +1,76 @@
-// #contact {
-//   background-image: linear-gradient(
-//     135deg,
-//     $primary-color 0%,
-//     $secondary-color 100%
-//   );
-//   -webkit-clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
-//   clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
-//   padding: 15rem 0 10rem 0;
-//   margin-bottom: -1px;
-//   color: $white-color;
+.contact {
+  $root: &;
 
-//   @include respond(tab-land) {
-//     padding: 10rem 0;
-//     clip-path: none;
-//     margin-top: 0;
-//     -webkit-clip-path: none;
-//   }
+  background-image: linear-gradient(
+    135deg,
+    $primary-color 0%,
+    $secondary-color 100%
+  );
+  -webkit-clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
+  padding: 15rem 0 10rem 0;
+  margin-bottom: -1px;
+  color: $white-color;
 
-//   .contact-wrapper {
-//     margin-top: 3.2rem;
-//     padding: 0 2rem;
-//     backface-visibility: hidden;
+  &__wrapper {
+    display: flex;
 
-//     &__text {
-//       margin-bottom: 2.5rem;
-//     }
+    @include breakpoints(large) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-//     &__text {
-//       a {
-//         font-size: 2.4rem;
+    #{$root}__image-wrapper {
+      width: 45%;
+      #{$root}__image {
+        max-width: 100%;
+      }
+    }
 
-//         @include respond(phone) {
-//           font-size: 2rem;
-//         }
-//       }
-//     }
-//   }
-// }
+    #{$root}__form-wrapper {
+      width: 45%;
+      #{$root}__form {
+        // max-width: rem(784);
+
+        &-group {
+          position: relative;
+
+          #{$root}__input {
+            width: 100%;
+            padding: rem(20) 0;
+            font-size: rem(27);
+            color: $white-color;
+            margin-bottom: rem(33);
+            border: none;
+            border-bottom: 1px solid #fff;
+            outline: none;
+            background-color: transparent;
+
+            &:focus ~ #{$root}__label,
+            &:valid ~ #{$root}__label {
+              top: rem(-45);
+              left: 0;
+              color: #fff;
+              font-size: rem(34);
+            }
+          }
+
+          #{$root}__label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: rem(20) 0;
+            font-size: rem(33);
+            pointer-events: none;
+            transition: 0.5s;
+          }
+        }
+      }
+    }
+  }
+
+  &__btn {
+    text-align: left;
+  }
+}

@@ -10,8 +10,8 @@
   .posts {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    max-width: 1280px;
-    gap: rem(20);
+    max-width: rem(1280);
+    gap: rem(18);
 
     @include breakpoints(medium) {
       grid-template-columns: repeat(2, 1fr);
@@ -41,24 +41,23 @@
 
       .post-header {
         &__image {
-          height: 250px;
+          height: rem(250);
           object-fit: cover;
 
           @include breakpoints(medium) {
-            height: 225px;
+            height: rem(225);
           }
 
           @include breakpoints(large) {
-            height: 265px;
+            height: rem(265);
           }
         }
       }
 
       .post-body {
         text-align: left;
-        padding-inline: 3.5rem;
-        padding-top: 0rem;
-        padding-bottom: 1.5rem;
+        padding-inline: rem(14);
+        padding-bottom: rem(20);
 
         &__info {
           display: flex;
@@ -66,7 +65,7 @@
           align-items: center;
 
           &-tag {
-            font-size: 14px;
+            font-size: rem(14);
             padding: 0.3em 1em;
             margin: 0.25em;
             border-radius: 1em;
@@ -79,6 +78,11 @@
           &-date {
             margin: 0;
             line-height: 1;
+            font-size: rem(14);
+
+            @include breakpoints(medium) {
+              font-size: $default-font-size;
+            }
 
             span {
               margin-right: 0.7rem;
@@ -88,7 +92,7 @@
 
         &__title {
           font-size: $default-font-size;
-          margin-block: 1.7rem;
+          margin-block: rem(10);
           text-decoration: underline;
           color: $primary-color;
           display: block;
@@ -96,8 +100,7 @@
         }
 
         &__brief {
-          font-size: 1.3rem;
-          font-weight: 400;
+          font-size: rem(14);
         }
       }
     }
