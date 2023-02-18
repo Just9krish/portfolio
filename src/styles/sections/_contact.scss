@@ -6,71 +6,57 @@
     $primary-color 0%,
     $secondary-color 100%
   );
-  -webkit-clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
-  clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
-  padding: 15rem 0 10rem 0;
-  margin-bottom: -1px;
-  color: $white-color;
+
+  @include breakpoints(large) {
+    -webkit-clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
+    padding: rem(120) 0 rem(78) 0;
+    margin-bottom: -1px;
+  }
 
   &__wrapper {
-    display: flex;
-
-    @include breakpoints(large) {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    #{$root}__image-wrapper {
-      width: 45%;
-      #{$root}__image {
-        max-width: 100%;
-      }
+    #{$root}__form-title {
+      color: $primary-color;
     }
 
     #{$root}__form-wrapper {
-      width: 45%;
+      padding-block: rem(20);
+      background-color: $white-color;
+      padding-inline: rem(18);
+      border-radius: rem(8);
+
+      @include breakpoints(large) {
+        max-width: rem(778);
+        margin-inline: auto;
+      }
+
       #{$root}__form {
-        // max-width: rem(784);
+        display: flex;
+        flex-direction: column;
 
         &-group {
-          position: relative;
+          margin-bottom: rem(16);
 
           #{$root}__input {
+            display: block;
             width: 100%;
-            padding: rem(20) 0;
-            font-size: rem(27);
-            color: $white-color;
-            margin-bottom: rem(33);
-            border: none;
-            border-bottom: 1px solid #fff;
-            outline: none;
-            background-color: transparent;
-
-            &:focus ~ #{$root}__label,
-            &:valid ~ #{$root}__label {
-              top: rem(-45);
-              left: 0;
-              color: #fff;
-              font-size: rem(34);
-            }
+            height: calc(1.5em + 0.75em + 2px);
+            color: #6c757d;
+            background: none;
+            padding: rem(6) rem(12);
+            font-size: rem(18);
+            line-height: 1.5;
+            border: 1px solid #ced4da;
+            border-radius: rem(16);
+            background-clip: padding-box;
           }
+        }
 
-          #{$root}__label {
-            position: absolute;
-            top: 0;
-            left: 0;
-            padding: rem(20) 0;
-            font-size: rem(33);
-            pointer-events: none;
-            transition: 0.5s;
-          }
+        .textaria {
+          width: 100%;
+          height: rem(150);
         }
       }
     }
-  }
-
-  &__btn {
-    text-align: left;
   }
 }

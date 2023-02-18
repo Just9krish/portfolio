@@ -93,6 +93,25 @@
   }
 }
 
+.cta-btn--contact {
+  color: green;
+  border: 2px solid green;
+
+  &::after {
+    background-color: green;
+  }
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
 /* Arrow Button */
 .up i {
   color: #272727;
