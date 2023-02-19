@@ -15,7 +15,7 @@
 
     @include breakpoints(medium) {
       grid-template-columns: repeat(2, 1fr);
-      gap: rem(26);
+      gap: rem(24);
     }
 
     @include breakpoints(large) {
