@@ -1,5 +1,3 @@
-import contactImg from "../assets/undraw_hello.svg";
-
 export default function Contact() {
   return (
     <section id="contact" className="contact">
@@ -45,9 +43,7 @@ export default function Contact() {
                 </div>
               </div>
               <div class="contact__form-group">
-                <button class="cta-btn cta-btn--contact contact__btn">
-                  Send
-                </button>
+                <button class="cta-btn--contact">Send</button>
               </div>
             </form>
           </div>

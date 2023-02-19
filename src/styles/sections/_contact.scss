@@ -12,6 +12,8 @@
     clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
     padding: rem(120) 0 rem(78) 0;
     margin-bottom: -1px;
+    margin-top: rem(-180);
+    padding-top: rem(200);
   }
 
   &__wrapper {
@@ -24,6 +26,11 @@
       background-color: $white-color;
       padding-inline: rem(18);
       border-radius: rem(8);
+
+      @include breakpoints(medium) {
+        padding-block: rem(33);
+        padding-inline: rem(43);
+      }
 
       @include breakpoints(large) {
         max-width: rem(778);
@@ -41,9 +48,9 @@
             display: block;
             width: 100%;
             height: calc(1.5em + 0.75em + 2px);
-            color: #6c757d;
+            color: #535c62;
             background: none;
-            padding: rem(6) rem(12);
+            padding: rem(6) rem(15);
             font-size: rem(18);
             line-height: 1.5;
             border: 1px solid #ced4da;

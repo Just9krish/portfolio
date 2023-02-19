@@ -6,6 +6,7 @@
   font-weight: bold;
   line-height: 1;
   z-index: 1;
+  box-shadow: 0px 0px 20px -20px;
   transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
 
   &::after {
@@ -66,6 +67,7 @@
     @include breakpoints(medium) {
       -webkit-text-fill-color: $white-color;
       text-decoration: none;
+      box-shadow: 0px 0px 20px -18px;
     }
 
     &::after {
@@ -86,6 +88,7 @@
   &:hover {
     color: $secondary-color;
     text-decoration: none;
+    box-shadow: 0px 0px 20px -18px;
 
     &::after {
       width: 100%;
@@ -94,21 +97,63 @@
 }
 
 .cta-btn--contact {
-  color: green;
-  border: 2px solid green;
+  --color: #00a97f;
+  padding: 0.8em 1.7em;
+  background-color: transparent;
+  border-radius: 0.3em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: 400;
+  font-size: rem(14);
+  border: 1px solid;
+  font-family: inherit;
+  text-transform: uppercase;
+  color: var(--color);
+  z-index: 1;
+
+  @include breakpoints(large) {
+    font-size: rem(16);
+    font-weight: 600;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    width: rem(50);
+    height: rem(50);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--color);
+    transition: 1s ease;
+  }
+
+  &::before {
+    top: -2em;
+    left: -2em;
+  }
 
   &::after {
-    background-color: green;
+    left: calc(100% + 2em);
+    top: calc(100% + 2em);
+  }
+
+  &:hover::before,
+  &:hover::after {
+    height: rem(410);
+    width: rem(410);
   }
 
   &:hover {
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
+    color: $white-color;
+  }
 
-    &::after {
-      width: 100%;
-    }
+  &:active {
+    filter: brightness(0.8);
   }
 }
 
