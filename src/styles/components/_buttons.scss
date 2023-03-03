@@ -1,160 +1,41 @@
 /* Call to Action Button */
 .cta-btn {
-  display: inline-block;
-  position: relative;
-  padding: 0.8rem $default-font-size;
-  font-weight: bold;
-  line-height: 1;
+  padding: 15px 25px;
+  border: unset;
+  border-radius: 15px;
+  color: #212121;
   z-index: 1;
-  box-shadow: 0px 0px 20px -20px;
-  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
-
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 0px;
-    height: 100%;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
-  }
-}
-
-/* Hero Style */
-.cta-btn--hero {
-  border: 2px solid $secondary-color;
-  -webkit-text-fill-color: $secondary-color;
-
-  @include breakpoints(medium) {
-    border-width: 2px;
-    border-style: solid;
-    -moz-border-image: -moz-linear-gradient(
-      135deg,
-      $primary-color 0%,
-      $secondary-color 100%
-    );
-    -webkit-border-image: -webkit-linear-gradient(
-      135deg,
-      $primary-color 0%,
-      $secondary-color 100%
-    );
-    border-image: linear-gradient(
-      135deg,
-      $primary-color 0%,
-      $secondary-color 100%
-    );
-    -webkit-border-image-slice: 1;
-    border-image-slice: 1;
-  }
-
-  &::after {
-    background-image: none;
-
-    @include breakpoints(medium) {
-      background-image: linear-gradient(
-        135deg,
-        $primary-color 0%,
-        $secondary-color 100%
-      );
-    }
-  }
-
-  &:hover {
-    -webkit-text-fill-color: $secondary-color;
-
-    @include breakpoints(medium) {
-      -webkit-text-fill-color: $white-color;
-      text-decoration: none;
-      box-shadow: 0px 0px 20px -18px;
-    }
-
-    &::after {
-      width: 100%;
-    }
-  }
-}
-
-/* Resume Style */
-.cta-btn--resume {
-  color: $white-color;
-  border: 2px solid $white-color;
-
-  &::after {
-    background: $white-color;
-  }
-
-  &:hover {
-    color: $secondary-color;
-    text-decoration: none;
-    box-shadow: 0px 0px 20px -18px;
-
-    &::after {
-      width: 100%;
-    }
-  }
-}
-
-.cta-btn--contact {
-  --color: #00a97f;
-  padding: 0.8em 1.7em;
-  background-color: transparent;
-  border-radius: 0.3em;
+  background: #e8e8e8;
   position: relative;
+  font-weight: 1000;
+  font-size: 17px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
   overflow: hidden;
-  cursor: pointer;
-  transition: 0.5s;
-  font-weight: 400;
-  font-size: rem(14);
-  border: 1px solid;
-  font-family: inherit;
-  text-transform: uppercase;
-  color: var(--color);
-  z-index: 1;
+}
 
-  @include breakpoints(large) {
-    font-size: rem(16);
-    font-weight: 600;
-  }
+.cta-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: #212121;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+}
 
-  &::before,
-  &::after {
-    content: "";
-    display: block;
-    width: rem(50);
-    height: rem(50);
-    transform: translate(-50%, -50%);
-    position: absolute;
-    border-radius: 50%;
-    z-index: -1;
-    background-color: var(--color);
-    transition: 1s ease;
-  }
+.cta-btn:hover {
+  color: #e8e8e8;
+}
 
-  &::before {
-    top: -2em;
-    left: -2em;
-  }
-
-  &::after {
-    left: calc(100% + 2em);
-    top: calc(100% + 2em);
-  }
-
-  &:hover::before,
-  &:hover::after {
-    height: rem(410);
-    width: rem(410);
-  }
-
-  &:hover {
-    color: $white-color;
-  }
-
-  &:active {
-    filter: brightness(0.8);
-  }
+.cta-btn:hover::before {
+  width: 100%;
 }
 
 /* Arrow Button */

@@ -1,7 +1,4 @@
 #posts {
-  background-color: $white-color;
-  color: $dark-blue-text;
-
   @include breakpoints(large) {
     margin-top: rem(-160);
     padding-block: rem(240);
@@ -25,10 +22,10 @@
     .post {
       border-radius: 1rem;
       overflow: hidden;
-      border: 2px solid $secondary-color;
+      border: 2px solid;
       -webkit-transform: perspective(1px) translateZ(0);
       transform: perspective(1px) translateZ(0);
-      box-shadow: 5px 5px 2px $secondary-color;
+      box-shadow: 5px 5px 2px;
       -webkit-transition-duration: 0.3s;
       transition-duration: 0.3s;
       -webkit-transition-property: box-shadow;
@@ -36,20 +33,20 @@
 
       &:hover,
       &:focus {
-        box-shadow: 8px 8px 2px $secondary-color;
+        box-shadow: 8px 8px 2px;
       }
 
       .post-header {
         &__image {
-          height: rem(250);
+          // height: rem(250);
           object-fit: cover;
 
           @include breakpoints(medium) {
-            height: rem(225);
+            // height: rem(225);
           }
 
           @include breakpoints(large) {
-            height: rem(265);
+            // height: rem(265);
           }
         }
       }
@@ -71,8 +68,6 @@
             border-radius: 1em;
             border: none;
             outline: none;
-            background-color: slategrey;
-            color: $white-color;
           }
 
           &-date {
@@ -94,7 +89,6 @@
           font-size: $default-font-size;
           margin-block: rem(10);
           text-decoration: underline;
-          color: $primary-color;
           display: block;
           line-height: 1.2;
         }

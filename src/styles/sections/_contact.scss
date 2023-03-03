@@ -1,12 +1,6 @@
 .contact {
   $root: &;
 
-  background-image: linear-gradient(
-    135deg,
-    $primary-color 0%,
-    $secondary-color 100%
-  );
-
   @include breakpoints(large) {
     -webkit-clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
     clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
@@ -18,12 +12,10 @@
 
   &__wrapper {
     #{$root}__form-title {
-      color: $primary-color;
     }
 
     #{$root}__form-wrapper {
       padding-block: rem(20);
-      background-color: $white-color;
       padding-inline: rem(18);
       border-radius: rem(8);
 
