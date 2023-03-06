@@ -1,4 +1,55 @@
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding-inline: rem(20);
+  padding-block: rem(15);
+  z-index: 4;
+
+  &__logo {
+    font-size: rem(20);
+  }
+
+  &__menu {
+    &-button {
+      z-index: 4;
+      @include breakpoints(large) {
+        display: none;
+      }
+
+      svg {
+        font-size: rem(20);
+      }
+    }
+
+    &-items {
+      position: fixed;
+      z-index: 3;
+      top: 0;
+      right: -100%;
+      width: 75%;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      align-items: flex-start;
+      transition: all 500ms;
+      background-color: brown;
+
+      .menu {
+        display: flex;
+        flex-direction: column;
+        margin-top: rem(100);
+        padding-left: rem(50);
+        color: white;
+
+        &__item {
+          margin-bottom: rem(20);
+        }
+      }
+    }
+  }
+}
+
+.active {
+  right: 0;
 }
