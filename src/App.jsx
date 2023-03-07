@@ -1,5 +1,5 @@
 import Hero from "./components/Herosection";
-import About from "./components/About";
+import Showcase from "./components/Showcase";
 import Projects from "./components/Projects";
 import Blogs from "./components/Blogs";
 import Contact from "./components/Contact";
@@ -11,7 +11,7 @@ function App() {
     <>
       <Header />
       <Hero />
-      <About />
+      <Showcase />
       <Projects />
       <Blogs />
       <Contact />

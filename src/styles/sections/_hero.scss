@@ -1,8 +1,13 @@
 .hero {
   &__title {
     font-size: $mid-font-size;
+    font-weight: bold;
   }
   &__discription {
-    font-size: $small-font-size;
+    font-size: $default-font-size;
+    font-weight: 300;
+    margin-bottom: rem(8);
+    word-break: break-word;
+    color: $primary-black--lighten;
   }
 }

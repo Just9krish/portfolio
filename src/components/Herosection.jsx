@@ -3,22 +3,25 @@ export default function Herosection() {
     <section className="hero" id="hero">
       <div className="container">
         <h1 className="hero__title">
-          Amit Vishwakarma
-          {/* Hi, my name is
-          <span className="hero__title-name text-color-main">
-            {" "}
-            Amit Vishwakarma
-          </span>
-          <br />
-          I'm the Full Stack Developer. */}
+          Hello, <br />
+          My name is Amit.
         </h1>
         <p className="hero__discription">
-          I'm Full Stack Developer on a quest to constantly expand my skills and
-          push the boundaries of what's possible. Let's start scrolling and
-          learn more about me.
+          I am recent graduate from Mumbai University with a degree in
+          Information Technology.
+        </p>
+        <p className="hero__discription">
+          My primary interests lie in building web applications and Restful
+          APIs.
+        </p>
+        <p className="hero__discription">
+          I am comfortable working with languages such as JavaScript, HTML, and
+          CSS, and I am familiar with web frameworks like React, Node, and
+          Express. Additionally, I have experience working with databases like
+          MySQL and MongoDB.
         </p>
         <a rel="noreferrer" className="cta-btn cta-btn--hero" href="#projects">
-          View my work
+          Get My Resume
         </a>
       </div>
     </section>

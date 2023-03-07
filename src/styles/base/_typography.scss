@@ -1,7 +1,20 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
-
-h1 {
-  font-weight: 700;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding: 0;
+  margin-bottom: rem(26);
+  color: inherit;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+  font-size: rem(25);
+  line-height: 1.1;
 }
 
 img {
@@ -20,8 +33,14 @@ ul {
 }
 
 p {
+  margin-left: 0;
+  margin-right: 0;
   margin-top: 0;
-  margin-bottom: rem(16);
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  margin-bottom: rem(27);
 }
 
 p,

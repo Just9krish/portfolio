@@ -1,22 +1,17 @@
 // COLORS
-// // $primary-color: #02aab0;
-// // $secondary-color: #00cdac;
-
-// // $primary-color: #5a1c93;
-// $primary-color: #ff851b;
-// $secondary-color: #bc92f8;
-
-// $white-color: #fff;
-
-// $dark-grey: #111111;
-// $light-grey: #d2d2d2;
-
-// $bg-accent: #f5f0fc;
-
-// $dark-blue-text: #272341; // For Headings
+$primary-black: #000;
+$primary-black--lighten: rgba(0, 0, 0, 0.6);
+$primary-black--lighten-2: rgba(0, 0, 0, 0.85);
+$image-shade: #e8e6e6;
+$repo-name: #001aff;
+$repo-border: #e1e4e8;
+$flicy-backgroud: #fff;
+$flicky-color: #333;
+$flicky-dot: #333;
+$backgroud: #fff;
 
 // FONT SIZE
 $small-font-size: rem(14);
 $default-font-size: rem(16);
-$mid-font-size: rem(20);
+$mid-font-size: rem(24);
 $big-font-size: rem(36);

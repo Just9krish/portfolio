@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  line-height: 1.66;
 
   &.sr .load-hidden {
     visibility: hidden;
@@ -9,9 +10,10 @@ html {
 body {
   font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
-  text-align: center;
-  line-height: 1.5;
-  font-weight: 400;
+  font-weight: normal;
+  word-wrap: break-word;
+  font-kerning: normal;
+  color: $primary-black--lighten-2;
 }
 
 /* Scrollbar */
