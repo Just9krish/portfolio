@@ -1,0 +1,48 @@
+.showcase {
+  &__slider-container {
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    margin-top: 2em;
+  }
+
+  &__card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300vw;
+    transition: all 500ms ease-in-out;
+  }
+
+  &__card {
+    width: 100%;
+
+    &-img-container {
+      height: rem(230);
+      overflow: hidden;
+      border-radius: rem(5);
+    }
+
+    &-img {
+      object-position: center;
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__controls {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    top: 30%;
+  }
+
+  &__control {
+    background-color: $flicy-backgroud;
+    padding: rem(11) rem(15);
+    cursor: pointer;
+  }
+}
