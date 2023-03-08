@@ -13,6 +13,7 @@ body {
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
+  font-feature-settings: "kern", "liga", "clig", "calt";
   color: $primary-black--lighten-2;
 }
 

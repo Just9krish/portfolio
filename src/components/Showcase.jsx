@@ -4,50 +4,42 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import { Data as projects } from "../utils/ProjectsData";
 
-export default function About() {
+export default function Showcase() {
   const [slide, setSlide] = useState(0);
-
-  const data = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
-
-  // function changeSlide(direction) {
-  //   if (direction === "l") {
-  //     setSlide(slide !== 0 ? slide - 1 : -1);
-  //   }
-
-  //   if (direction === "r") {
-  //     setSlide(slide === data.length - 1 ? 0 : slide + 1);
-  //   }
-  // }
 
   function changeSlide(direction) {
     if (direction == "l") {
-      setSlide((pre) => (pre === 0 ? data.length - 1 : pre - 1));
+      setSlide((pre) => (pre == 0 ? projects.length - 1 : pre - 1));
     }
 
     if (direction == "r") {
-      setSlide((pre) => (pre === data.length - 1 ? 0 : pre + 1));
+      setSlide((pre) => (pre == projects.length - 1 ? 0 : pre + 1));
     }
   }
 
-  console.log(slide);
+  function handleClick(e) {
+    const value = parseInt(e.target.firstElementChild.textContent);
+    setSlide(value);
+  }
 
   return (
-    <section class="showcase" id="showcase">
-      <div class="container">
-        <h2 class="showcase__title">Showcase</h2>
-        <div class="showcase__content">
-          <p class="showcase__description">
+    <section className="showcase" id="showcase">
+      <div className="container">
+        <h2 className="showcase__title">Showcase.</h2>
+        <div className="showcase__content">
+          <p className="showcase__description">
             These are a few picks for projects. Each page explains the steps I
             take to construct a project, the technology stack I use, what I
             learned, and how I come up with solutions.
           </p>
-          <div class="showcase__slider-container">
+          <div className="showcase__slider-container">
             <div
-              class="showcase__card-container"
+              className="showcase__card-container"
               style={{ transform: `translateX(${-100 * slide}vw)` }}
             >
-              {data.map((data, idx) => (
+              {projects?.map((project, idx) => (
                 <div
                   style={{
                     minWidth: `${
@@ -55,40 +47,65 @@ export default function About() {
                     }`,
                     scale: `${idx === slide ? "1" : ".7"}`,
                   }}
-                  class="showcase__card"
+                  className="showcase__card"
                   key={idx}
                 >
-                  <div class="showcase__card-img-container">
-                    <img
-                      class="showcase__card-img"
-                      src="./public/profile.jpg"
-                    />
-                  </div>
-                  <h3 class="showcase__card-title">boxby</h3>
-                  <p class="showcase__card-description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Illo voluptatum perferendis error veritatis repellendus
-                    soluta quia delectus aspernatur deserunt, in, autem minus et
-                    aperiam illum?
+                  <a href="">
+                    <div className="showcase__card-content">
+                      <div className="showcase__card-img-container">
+                        <img
+                          className="showcase__card-img"
+                          src={project.image}
+                        />
+                      </div>
+                      <div className="showcase__card-tags-container">
+                        <div className="showcase__card-tags">
+                          {project.techstack?.map((tech) => (
+                            <span className="showcase__card-tag">{tech}</span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <h3 className="showcase__card-title">{project.name}</h3>
+                  <p className="showcase__card-description">
+                    {project.brief.slice(0, 200)}
                   </p>
-                  <button class="showcase__card-btn">view project</button>
+                  <a
+                    href="#"
+                    className="showcase__card-btn"
+                    aria-label="Link to showcase"
+                  >
+                    view project
+                  </a>
                 </div>
               ))}
             </div>
-            <div class="showcase__controls">
-              <div
-                class="showcase__control showcase__control--left"
-                onClick={() => changeSlide("l")}
-              >
-                <FontAwesomeIcon icon={faChevronLeft} />
-              </div>
-              <div
-                class="showcase__control showcase__control--right"
-                onClick={() => changeSlide("r")}
-              >
-                <FontAwesomeIcon icon={faChevronRight} />
-              </div>
+            <div
+              className="showcase__control showcase__control--left"
+              onClick={() => changeSlide("l")}
+            >
+              <FontAwesomeIcon icon={faChevronLeft} />
             </div>
+            <div
+              className="showcase__control showcase__control--right"
+              onClick={() => changeSlide("r")}
+            >
+              <FontAwesomeIcon icon={faChevronRight} />
+            </div>
+            <ul className="dot-controls">
+              {projects?.map((project, idx) => (
+                <li
+                  className={`dot-controls__dot ${
+                    idx == slide ? "dot-active" : ""
+                  }`}
+                  key={idx}
+                  onClick={handleClick}
+                >
+                  <span className="sr-only">{idx}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

@@ -45,8 +45,10 @@ p {
 
 p,
 a {
-  font-family: "Montserrat", sans-serif;
+  font-family: $RaleWay;
   font-size: $default-font-size;
+  font-weight: 500;
+  color: $primary-black--lighten-2;
 }
 
 a,
