@@ -43,7 +43,6 @@ p {
   margin-bottom: rem(27);
 }
 
-p,
 a {
   font-family: $RaleWay;
   font-size: $default-font-size;
@@ -99,8 +98,4 @@ a:hover {
   @include breakpoints(medium) {
     font-size: rem(36);
   }
-}
-
-.dark-blue-text {
-  color: darkblue !important;
 }
