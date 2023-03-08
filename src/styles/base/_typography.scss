@@ -64,7 +64,7 @@ a:hover {
 .container {
   width: 100%;
   margin-inline: auto;
-  padding-inline: rem(16);
+  // padding-inline: rem(16);
 
   @media (min-width: rem(576)) {
     max-width: rem(540);

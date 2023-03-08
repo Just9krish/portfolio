@@ -8,14 +8,14 @@
 
   &__card-container {
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
-    width: 300vw;
     transition: all 500ms ease-in-out;
   }
 
   &__card {
-    width: 100%;
+    // width: 100vw;
+    transition: all 500ms ease-in-out;
 
     &-img-container {
       height: rem(230);
@@ -44,5 +44,6 @@
     background-color: $flicy-backgroud;
     padding: rem(11) rem(15);
     cursor: pointer;
+    opacity: 0.6;
   }
 }
