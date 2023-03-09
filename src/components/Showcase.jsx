@@ -1,10 +1,6 @@
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { Data as projects } from "../utils/ProjectsData";
+import { VscTriangleLeft, VscTriangleRight } from "react-icons/vsc";
 
 export default function Showcase() {
   const [slide, setSlide] = useState(0);
@@ -85,13 +81,13 @@ export default function Showcase() {
               className="showcase__control showcase__control--left"
               onClick={() => changeSlide("l")}
             >
-              <FontAwesomeIcon icon={faChevronLeft} />
+              <VscTriangleLeft />
             </div>
             <div
               className="showcase__control showcase__control--right"
               onClick={() => changeSlide("r")}
             >
-              <FontAwesomeIcon icon={faChevronRight} />
+              <VscTriangleRight />
             </div>
             <ul className="dot-controls">
               {projects?.map((project, idx) => (

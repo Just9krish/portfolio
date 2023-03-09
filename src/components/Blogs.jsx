@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 import { formatDistanceToNow } from "date-fns";
+import { BiBookBookmark, BiCalendarAlt } from "react-icons/bi";
 
 export default function Blogs() {
   const query = `{
@@ -71,7 +70,7 @@ export default function Blogs() {
                   <div className="post-body__info">
                     <p className="post-body__info-date">
                       <span>
-                        <FontAwesomeIcon icon={faCalendar} />
+                        <BiCalendarAlt />
                       </span>
                       {formatDistanceToNow(new Date(post.dateAdded), {
                         addSuffix: true,

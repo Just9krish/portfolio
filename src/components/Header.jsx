@@ -1,6 +1,6 @@
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import { BiMenuAltRight } from "react-icons/bi";
+import { GrClose } from "react-icons/gr";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,14 +13,14 @@ export default function Header() {
           className="header__menu-button"
           onClick={() => setIsOpen((prev) => !prev)}
         >
-          <FontAwesomeIcon icon={faBars} />
+          <BiMenuAltRight />
         </button>
       ) : (
         <button
           className="header__menu-button"
           onClick={() => setIsOpen((prev) => !prev)}
         >
-          <FontAwesomeIcon icon={faTimes} />
+          <GrClose />
         </button>
       )}
 

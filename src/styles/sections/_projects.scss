@@ -48,6 +48,7 @@
       white-space: nowrap;
       overflow: hidden !important;
       text-overflow: ellipsis;
+      text-transform: capitalize;
     }
 
     &-description {
@@ -55,15 +56,36 @@
       margin-top: rem(10);
       color: $primary-black--lighten-2;
       font-weight: 300;
+      margin-bottom: 0;
     }
 
     &-info {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       font-size: rem(12);
-      margin-top: rem(30);
+      margin-top: rem(28);
       color: $primary-black--lighten-2;
       font-family: $RaleWay;
+    }
+
+    &-language {
+      display: flex;
+      gap: rem(4);
+      align-items: center;
+
+      &--color {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+    }
+
+    &-date {
+      display: flex;
+      gap: rem(4);
+      align-items: center;
     }
   }
 }

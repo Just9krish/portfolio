@@ -1,8 +1,8 @@
 import { Data } from "../utils/ProjectsData";
 import Project from "./Project";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBook } from "@fortawesome/free-solid-svg-icons";
+import { BiBookBookmark, BiCalendarAlt } from "react-icons/bi";
 import { useEffect, useState } from "react";
+import { formatDistanceToNow } from "date-fns";
 
 export default function Projects() {
   const [repos, setRepos] = useState([]);
@@ -16,6 +16,8 @@ export default function Projects() {
       cpp: "#F34B7D",
       html: "#E34F26",
       css: "#1572B6",
+      ejs: "#A91E50",
+      scss: "#C6538C",
     };
     return colors[language.toLowerCase()] || "#000000";
   }
@@ -51,43 +53,38 @@ export default function Projects() {
           </div>
         </div>
         <div class="projects__list">
-          <div class="projects__card">
-            <div className="projects__card-head">
-              <FontAwesomeIcon className="projects__card-icon" icon={faBook} />
-              <a href="#" class="projects__card-title">
-                Fileshare
-              </a>
+          {repos.slice(0, 6).map((repo) => (
+            <div class="projects__card" key={repo.id}>
+              <div className="projects__card-head">
+                <BiBookBookmark className="projects__card-icon" />
+                <a
+                  target="_blank"
+                  href={repo.html_url}
+                  class="projects__card-title"
+                >
+                  {repo.name}
+                </a>
+              </div>
+              <p class="projects__card-description">{repo.description}</p>
+              <div class="projects__card-info">
+                <div class="projects__card-language">
+                  <span
+                    class="projects__card-language--color"
+                    style={{ backgroundColor: getColor(repo.language) }}
+                  ></span>
+                  <span>{repo.language}</span>
+                </div>
+                <div class="projects__card-date">
+                  <BiCalendarAlt />
+                  <span>
+                    {formatDistanceToNow(new Date(repo.created_at), {
+                      addSuffix: true,
+                    })}
+                  </span>
+                </div>
+              </div>
             </div>
-            <p class="projects__card-description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, sunt
-              doloremque delectus molestias vitae dolorum optio necessitatibus
-              nihil.
-            </p>
-            <div class="projects__card-info">
-              <span class="projects__card-color projects__card-color--yellow">
-                yellow color
-              </span>
-              <span class="projects__card-language projects__card-language--javascript">
-                javascript
-              </span>
-            </div>
-          </div>
-          <div class="projects__card">
-            <h4 class="projects__card-title">byakugenjs</h4>
-            <p class="projects__card-description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, sunt
-              doloremque delectus molestias vitae dolorum optio necessitatibus
-              nihil.
-            </p>
-            <div class="projects__card-info">
-              <span class="projects__card-color projects__card-color--blue">
-                blue color
-              </span>
-              <span class="projects__card-language projects__card-language--python">
-                python
-              </span>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
