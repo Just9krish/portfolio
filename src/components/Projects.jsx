@@ -35,46 +35,46 @@ export default function Projects() {
   }, []);
 
   return (
-    <section class="projects" id="projects">
-      <div class="container">
-        <div class="projects__header">
-          <h2 class="projects__title">Projects.</h2>
-          <p class="projects__description">
+    <section className="projects" id="projects">
+      <div className="container">
+        <div className="projects__header">
+          <h2 className="projects__title">Projects.</h2>
+          <p className="projects__description">
             These are my some project which are fetch from the Github.
           </p>
         </div>
-        <div class="projects__item">
-          <div class="projects__avatar">
-            <img class="projects__image" src="./profile.jpg" alt="" />
+        <div className="projects__item">
+          <div className="projects__avatar">
+            <img className="projects__image" src="./profile.jpg" alt="" />
           </div>
-          <div class="projects__details">
-            <p class="projects__name">Light yagimi</p>
-            <p class="projects__subtitle">death&light</p>
+          <div className="projects__details">
+            <p className="projects__name">Light yagimi</p>
+            <p className="projects__subtitle">death&light</p>
           </div>
         </div>
-        <div class="projects__list">
-          {repos.slice(0, 6).map((repo) => (
-            <div class="projects__card" key={repo.id}>
+        <div className="projects__list">
+          {repos.slice(0, 6)?.map((repo) => (
+            <div className="projects__card" key={repo.id}>
               <div className="projects__card-head">
                 <BiBookBookmark className="projects__card-icon" />
                 <a
                   target="_blank"
                   href={repo.html_url}
-                  class="projects__card-title"
+                  className="projects__card-title"
                 >
                   {repo.name}
                 </a>
               </div>
-              <p class="projects__card-description">{repo.description}</p>
-              <div class="projects__card-info">
-                <div class="projects__card-language">
+              <p className="projects__card-description">{repo.description}</p>
+              <div className="projects__card-info">
+                <div className="projects__card-language">
                   <span
-                    class="projects__card-language--color"
+                    className="projects__card-language--color"
                     style={{ backgroundColor: getColor(repo.language) }}
                   ></span>
                   <span>{repo.language}</span>
                 </div>
-                <div class="projects__card-date">
+                <div className="projects__card-date">
                   <BiCalendarAlt />
                   <span>
                     {formatDistanceToNow(new Date(repo.created_at), {

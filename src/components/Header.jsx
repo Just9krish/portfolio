@@ -5,6 +5,8 @@ import { GrClose } from "react-icons/gr";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const menus = ["home", "showcase", "projects", "contact"];
+
   return (
     <header className="header">
       <div className="header__logo">Amit</div>
@@ -27,12 +29,11 @@ export default function Header() {
       <div className={`header__menu-items ${isOpen ? "active" : ""}`}>
         <nav className="menu">
           <ul className="menu__list">
-            <li className="menu__item">Home</li>
-            <li className="menu__item">About</li>
-            <li className="menu__item">Skills</li>
-            <li className="menu__item">Projects</li>
-            <li className="menu__item">Blogs</li>
-            <li className="menu__item">Contacts</li>
+            {menus.map((menu) => (
+              <li className="menu__item">
+                <a href={`#${menu}`}>{menu}</a>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>

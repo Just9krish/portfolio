@@ -39,7 +39,7 @@ export default function Showcase() {
                 <div
                   style={{
                     minWidth: `${
-                      idx === slide ? "calc(100vw - 2rem)" : "100vw"
+                      idx === slide ? "calc(100vw - 4rem)" : "100vw"
                     }`,
                     scale: `${idx === slide ? "1" : ".7"}`,
                   }}

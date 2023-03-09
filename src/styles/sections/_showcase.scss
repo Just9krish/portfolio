@@ -116,13 +116,16 @@
 
   &__control {
     background-color: $primary-black;
-    padding: rem(11) rem(15);
+    padding: rem(13);
     cursor: pointer;
     opacity: 0.4;
     backdrop-filter: blur(3px);
     position: absolute;
     top: 30%;
     color: $flicy-backgroud;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &--left {
       left: 0;

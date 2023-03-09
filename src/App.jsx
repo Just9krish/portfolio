@@ -13,7 +13,7 @@ function App() {
       <Hero />
       <Showcase />
       <Projects />
-      <Blogs />
+      {/* <Blogs /> */}
       <Contact />
       <Footer />
     </>

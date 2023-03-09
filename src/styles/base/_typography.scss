@@ -87,15 +87,3 @@ a:hover {
     max-width: rem(1320);
   }
 }
-
-.section-title {
-  margin: 0px;
-  font-size: rem(27);
-  margin-bottom: rem(48);
-  font-weight: 700;
-  text-transform: uppercase;
-
-  @include breakpoints(medium) {
-    font-size: rem(36);
-  }
-}
