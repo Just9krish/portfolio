@@ -1,3 +1,5 @@
+import { HiOutlineDownload } from "react-icons/hi";
+
 export default function Herosection() {
   return (
     <section className="hero" id="home">
@@ -20,8 +22,9 @@ export default function Herosection() {
           Express. Additionally, I have experience working with databases like
           MySQL and MongoDB.
         </p>
-        <a rel="noreferrer" className="cta-btn cta-btn--hero" href="#projects">
+        <a rel="noreferrer" hre className="cta-btn cta-btn--hero" href="#p">
           Get My Resume
+          <HiOutlineDownload />
         </a>
       </div>
     </section>

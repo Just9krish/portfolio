@@ -11,6 +11,10 @@
     rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
   background: #fff;
 
+  @include breakpoints(medium) {
+    display: none;
+  }
+
   &__logo {
     font-size: rem(20);
   }
@@ -18,10 +22,10 @@
   &__menu {
     &-button {
       z-index: 4;
-      transform: translateY(180deg);
+      transform: rotateX(180deg);
       cursor: pointer;
 
-      @include breakpoints(large) {
+      @include breakpoints(medium) {
         display: none;
       }
 
@@ -45,20 +49,16 @@
       transition: all 500ms ease-in-out;
       background-color: $primary-black--lighten;
       backdrop-filter: blur(rem(7));
-      box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-        rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
 
       .menu {
         display: flex;
         flex-direction: column;
-        // margin-top: rem(150);
-        // padding-left: rem(70);
 
         &__item {
           margin-bottom: rem(20);
 
           & a {
-            color: #fff;
+            color: $backgroud;
             font-size: rem(25);
             text-transform: capitalize;
             transition: all 200ms ease;
@@ -66,7 +66,7 @@
             &:hover,
             &:active,
             &:focus {
-              color: $primary-black;
+              color: $flicky-color;
             }
           }
         }
@@ -77,4 +77,58 @@
 
 .active {
   right: 0;
+}
+
+.desktop-header {
+  display: flex;
+  justify-content: space-between;
+  color: $primary-black;
+  padding: rem(40);
+  align-items: center;
+  width: 100%;
+
+  &__logo a {
+    margin: 0;
+    font-size: rem(25);
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+    &-item {
+      margin: rem(16);
+      text-transform: capitalize;
+    }
+
+    &-link {
+      color: #989898;
+      font-weight: 300;
+      font-size: $small-font-size;
+      display: inline-block;
+      margin: 0;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        border-color: none;
+        background: #ab4e4f;
+        width: 0%;
+        height: 2px;
+        transition: all 200ms ease;
+      }
+
+      &:hover {
+        color: $primary-black;
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Data as projects } from "../utils/ProjectsData";
 import { VscTriangleLeft, VscTriangleRight } from "react-icons/vsc";
+import ProjectsGrid from "./ProjectsGrid";
 
 export default function Showcase() {
   const [slide, setSlide] = useState(0);
@@ -103,6 +104,7 @@ export default function Showcase() {
               ))}
             </ul>
           </div>
+          <ProjectsGrid />
         </div>
       </div>
     </section>

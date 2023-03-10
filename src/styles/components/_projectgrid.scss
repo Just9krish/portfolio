@@ -1,0 +1,55 @@
+.projects-grid {
+  display: none;
+
+  @include breakpoints(medium) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(30);
+    margin-top: 2em;
+  }
+
+  @include breakpoints(large) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__project {
+    border-radius: rem(6);
+    overflow: hidden;
+    border: 1px solid $repo-border;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: box-shadow 300ms ease;
+
+    &:hover {
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  &__content {
+    padding: rem(8) rem(15);
+  }
+
+  &__title {
+    margin-bottom: 0;
+    font-size: rem(21);
+  }
+
+  &__description {
+    margin: 0.6em auto;
+    font-weight: 300;
+    color: $primary-black--lighten-2;
+  }
+
+  &__link {
+    color: $primary-black--lighten-2;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: color 0.6s ease;
+
+    &:hover,
+    &:focus {
+      color: $primary-black;
+      text-decoration: underline;
+    }
+  }
+}

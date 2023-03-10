@@ -1,19 +1,22 @@
 /* Call to Action Button */
 .cta-btn {
-  padding: rem(12) rem(22);
+  padding: rem(9) rem(20);
   border: unset;
-  border-radius: 15px;
+  border-radius: rem(15);
   color: #212121;
   z-index: 1;
   background: #e8e8e8;
   position: relative;
-  font-weight: 1000;
-  font-size: rem(14);
-  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  font-weight: 600;
+  font-size: $small-font-size;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   transition: all 250ms;
   overflow: hidden;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: rem(5);
+  cursor: pointer;
 
   @include breakpoints(large) {
     font-size: rem(17);
@@ -46,6 +49,10 @@
 
 .cta-btn--hero {
   margin-top: rem(19);
+
+  & svg {
+    font-size: rem(16);
+  }
 }
 
 /* Arrow Button */

@@ -1,16 +1,15 @@
 .projects {
-  &__header {
-    &__title {
-      margin-bottom: rem(14);
-    }
-    &__description {
-      max-width: rem(600);
-      width: 100%;
-      word-break: break-word;
-      color: $primary-black--lighten;
-      font-weight: 300;
-      margin-bottom: rem(8);
-    }
+  &__title {
+    margin-bottom: rem(14);
+  }
+
+  &__description {
+    max-width: rem(600);
+    width: 100%;
+    word-break: break-word;
+    color: $primary-black--lighten;
+    font-weight: 300;
+    margin-bottom: rem(8);
   }
 
   &__item {
@@ -22,11 +21,16 @@
     margin-top: rem(30);
     gap: rem(30);
     grid-template-columns: 1fr;
+
+    @include breakpoints(medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &__card {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 100%;
     border: 1px solid $repo-border;
     border-radius: rem(5);
