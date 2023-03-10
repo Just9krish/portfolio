@@ -19,8 +19,8 @@
   cursor: pointer;
 
   @include breakpoints(large) {
-    font-size: rem(17);
-    padding: rem(15) rem(25);
+    font-size: $default-font-size;
+    padding: rem(11) rem(21);
   }
 }
 

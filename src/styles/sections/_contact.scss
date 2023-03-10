@@ -7,6 +7,12 @@
     display: flex;
     flex-direction: column;
     gap: rem(40);
+
+    @include breakpoints(large) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
   }
 
   &__description {
@@ -42,6 +48,10 @@
     &-wrapper {
       width: 100%;
       max-width: rem(500);
+
+      @include breakpoints(large) {
+        max-width: rem(520);
+      }
     }
 
     &-title {

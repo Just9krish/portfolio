@@ -5,8 +5,7 @@ export default function Herosection() {
     <section className="hero" id="home">
       <div className="container">
         <h1 className="hero__title">
-          Hello, <br />
-          My name is Amit.
+          Hello, <span>My name is Amit.</span>
         </h1>
         <p className="hero__discription">
           I am recent graduate from Mumbai University with a degree in

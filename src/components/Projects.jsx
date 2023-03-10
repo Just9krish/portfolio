@@ -37,20 +37,26 @@ export default function Projects() {
   return (
     <section className="projects" id="projects">
       <div className="container">
-        <div className="projects__header">
-          <h2 className="projects__title">Projects.</h2>
-          <p className="projects__description">
-            These are my some project which are fetch from the Github.
-          </p>
-        </div>
-        <div className="projects__item">
-          <div className="projects__avatar">
-            <img className="projects__image" src="./profile.jpg" alt="" />
+        <div className="projects__content">
+          <div className="projects__header">
+            <h2 className="projects__title">Projects.</h2>
+            <p className="projects__description">
+              These are my some project which are fetch from the Github.
+            </p>
           </div>
-          <div className="projects__details">
-            <p className="projects__name">Light yagimi</p>
-            <p className="projects__subtitle">death&light</p>
-          </div>
+          <a href="https://github.com/just9krish" target="_blank">
+            <div className="projects__item">
+              <div>
+                <div className="projects__avatar">
+                  <img className="projects__image" src="./profile.jpg" alt="" />
+                </div>
+                <div className="projects__details">
+                  <p className="projects__name">Light yagimi</p>
+                  <p className="projects__subtitle">death&light</p>
+                </div>
+              </div>
+            </div>
+          </a>
         </div>
         <div className="projects__list">
           {repos.slice(0, 6)?.map((repo) => (

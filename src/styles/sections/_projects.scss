@@ -1,4 +1,12 @@
 .projects {
+  &__content {
+    @include breakpoints(large) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
   &__title {
     margin-bottom: rem(14);
   }
@@ -14,6 +22,38 @@
 
   &__item {
     display: none;
+
+    @include breakpoints(large) {
+      display: block;
+      margin-right: rem(5);
+    }
+
+    & > div {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__avatar {
+    height: rem(64);
+    width: rem(64);
+    border-radius: 50%;
+    margin-right: rem(12);
+    overflow: hidden;
+  }
+
+  &__name {
+    margin: 0;
+    line-height: 1.3rem;
+    font-weight: 700;
+    margin-bottom: rem(2);
+  }
+
+  &__subtitle {
+    margin: 0;
+    font-size: $small-font-size;
+    color: $primary-black--lighten-2;
+    line-height: 1.3rem;
   }
 
   &__list {
@@ -24,6 +64,10 @@
 
     @include breakpoints(medium) {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoints(large) {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 

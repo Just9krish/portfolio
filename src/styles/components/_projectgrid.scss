@@ -9,7 +9,7 @@
   }
 
   @include breakpoints(large) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 
   &__project {
@@ -19,13 +19,19 @@
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     transition: box-shadow 300ms ease;
 
-    &:hover {
+    &:hover,
+    &:focus {
       box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
     }
   }
 
+  &__image-container {
+    border-bottom: 1px solid $repo-border;
+  }
+
   &__content {
-    padding: rem(8) rem(15);
+    padding: rem(15);
+    padding-bottom: rem(20);
   }
 
   &__title {

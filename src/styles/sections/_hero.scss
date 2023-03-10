@@ -1,15 +1,35 @@
 .hero {
+  @include breakpoints(medium) {
+    text-align: center;
+  }
+
   &__title {
     font-size: $mid-font-size;
     font-weight: bold;
+
+    @include breakpoints(large) {
+      font-size: $big-font-size;
+    }
+
+    & > span {
+      display: block;
+
+      @include breakpoints(large) {
+        display: inline;
+      }
+    }
   }
   &__discription {
     font-size: $default-font-size;
     font-weight: 300;
     margin-bottom: rem(8);
     width: 100%;
-    max-width: rem(600);
+    max-width: rem(700);
     word-break: break-word;
     color: $primary-black--lighten;
+
+    @include breakpoints(large) {
+      margin-inline: auto;
+    }
   }
 }
