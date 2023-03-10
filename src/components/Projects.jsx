@@ -44,11 +44,19 @@ export default function Projects() {
               These are my some project which are fetch from the Github.
             </p>
           </div>
-          <a href="https://github.com/just9krish" target="_blank">
+          <a
+            href="https://github.com/just9krish"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className="projects__item">
               <div>
                 <div className="projects__avatar">
-                  <img className="projects__image" src="./profile.jpg" alt="" />
+                  <img
+                    className="projects__image"
+                    src="./profile.jpg"
+                    alt="Profile picture of the owner"
+                  />
                 </div>
                 <div className="projects__details">
                   <p className="projects__name">Light yagimi</p>

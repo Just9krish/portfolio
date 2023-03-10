@@ -21,7 +21,13 @@ export default function Herosection() {
           Express. Additionally, I have experience working with databases like
           MySQL and MongoDB.
         </p>
-        <a rel="noreferrer" hre className="cta-btn cta-btn--hero" href="#p">
+        <a
+          rel="noreferrer"
+          className="cta-btn cta-btn--hero"
+          href="#"
+          target="_blank"
+          aria-label="Download my resume"
+        >
           Get My Resume
           <HiOutlineDownload />
         </a>

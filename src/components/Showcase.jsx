@@ -71,7 +71,7 @@ export default function Showcase() {
                   <a
                     href="#"
                     className="showcase__card-btn"
-                    aria-label="Link to showcase"
+                    aria-label="Link to project details"
                   >
                     view project
                   </a>
@@ -81,12 +81,16 @@ export default function Showcase() {
             <div
               className="showcase__control showcase__control--left"
               onClick={() => changeSlide("l")}
+              role="button"
+              aria-label="Previous slide"
             >
               <VscTriangleLeft />
             </div>
             <div
               className="showcase__control showcase__control--right"
               onClick={() => changeSlide("r")}
+              role="button"
+              aria-label="Next slide"
             >
               <VscTriangleRight />
             </div>
@@ -98,8 +102,10 @@ export default function Showcase() {
                   }`}
                   key={idx}
                   onClick={handleClick}
+                  aria-label={`Slide ${idx + 1}`}
+                  role="button"
                 >
-                  <span className="sr-only">{idx}</span>
+                  <span className="sr-only">{idx + 1}</span>
                 </li>
               ))}
             </ul>

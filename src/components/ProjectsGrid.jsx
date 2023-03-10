@@ -6,7 +6,11 @@ export default function ProjectsGrid() {
       {projects.map((project) => (
         <div class="projects-grid__project" key={project.id}>
           <div class="projects-grid__image-container">
-            <img class="projects-grid__image" src={project.image} alt="" />
+            <img
+              class="projects-grid__image"
+              src={project.image}
+              alt={project.name}
+            />
           </div>
           <div class="projects-grid__content">
             <h2 class="projects-grid__title">{project.name}</h2>
@@ -15,6 +19,7 @@ export default function ProjectsGrid() {
             </p>
             <a class="projects-grid__link" href={project.repo}>
               view project
+              <span class="sr-only">{project.name}</span>
             </a>
           </div>
         </div>

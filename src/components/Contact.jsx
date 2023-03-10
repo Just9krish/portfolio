@@ -29,7 +29,9 @@ export default function Contact() {
                   target="_blank"
                   class="contact__socials-item"
                   aria-label="Github"
+                  rel="noopener"
                 >
+                  <span class="sr-only">Github</span>
                   <BsGithub class="contact__socials-icon" />
                 </a>
                 <a
@@ -37,7 +39,9 @@ export default function Contact() {
                   target="_blank"
                   class="contact__socials-item"
                   aria-label="Linkedin"
+                  rel="noopener"
                 >
+                  <span class="sr-only">LinkedIn</span>
                   <FaLinkedinIn class="contact__socials-icon" />
                 </a>
                 <a
@@ -45,7 +49,9 @@ export default function Contact() {
                   target="_blank"
                   class="contact__socials-item"
                   aria-label="Twitter"
+                  rel="noopener"
                 >
+                  <span class="sr-only">Twitter</span>
                   <FaTwitter class="contact__socials-icon" />
                 </a>
               </div>
@@ -55,6 +61,9 @@ export default function Contact() {
             <form class="contact__form" action="">
               <h2 class="contact__form-title">Drop Me a Message</h2>
               <div class="contact__form-group">
+                <label for="name" class="sr-only">
+                  Your Name
+                </label>
                 <input
                   id="name"
                   class="contact__form-input"
@@ -64,6 +73,9 @@ export default function Contact() {
                 />
               </div>
               <div class="contact__form-group">
+                <label for="email" class="sr-only">
+                  Your Email
+                </label>
                 <input
                   id="email"
                   class="contact__form-input"
@@ -73,6 +85,9 @@ export default function Contact() {
                 />
               </div>
               <div class="contact__form-group">
+                <label for="message" class="sr-only">
+                  Your Message
+                </label>
                 <textarea
                   id="message"
                   class="contact__form-input contact__form-textaria"
@@ -81,7 +96,9 @@ export default function Contact() {
                 />
               </div>
               <div class="contact__form-group">
-                <button class="cta-btn cta-btn--contact">Send</button>
+                <button class="cta-btn cta-btn--contact" type="submit">
+                  Send
+                </button>
               </div>
             </form>
           </div>

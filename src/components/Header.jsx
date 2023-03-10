@@ -11,11 +11,13 @@ export default function Header() {
     <>
       {/* header for mobile */}
       <header className="header">
-        <div className="header__logo">{`<amit>`}</div>
+        <div className="header__logo" aria-label="Home page">{`<amit>`}</div>
         {!isOpen ? (
           <button
             className="header__menu-button"
             onClick={() => setIsOpen((prev) => !prev)}
+            aria-expanded={isOpen ? "true" : "false"}
+            aria-controls="header-menu"
           >
             <BiMenuAltRight />
           </button>
@@ -33,7 +35,9 @@ export default function Header() {
             <ul className="menu__list">
               {menus.map((menu) => (
                 <li className="menu__item">
-                  <a href={`#${menu}`}>{menu}</a>
+                  <a href={`#${menu}`} onClick={() => setIsOpen(false)}>
+                    {menu}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -45,7 +49,7 @@ export default function Header() {
 
       <header class="desktop-header">
         <div class="desktop-header__logo">
-          <a href="/" aria-label="Page">
+          <a href="/" aria-label="Home page">
             &lt;amit&gt;
           </a>
         </div>
@@ -53,7 +57,11 @@ export default function Header() {
           <ul class="desktop-header__menu">
             {menus.map((menu) => (
               <li class="desktop-header__menu-item">
-                <a href={`#${menu}`} class="desktop-header__menu-link">
+                <a
+                  href={`#${menu}`}
+                  class="desktop-header__menu-link"
+                  aria-label={`Jump to ${menu} section`}
+                >
                   {menu}
                 </a>
               </li>
