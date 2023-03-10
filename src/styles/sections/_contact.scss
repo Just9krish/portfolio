@@ -9,9 +9,6 @@
     gap: rem(40);
   }
 
-  &__info {
-  }
-
   &__description {
     width: 100%;
     max-width: rem(500);
@@ -42,11 +39,13 @@
   &__form {
     width: 100%;
 
-    &-title {
-      font-size: rem(18);
+    &-wrapper {
+      width: 100%;
+      max-width: rem(500);
     }
 
-    &-group {
+    &-title {
+      font-size: rem(18);
     }
 
     &-group + &-group {
