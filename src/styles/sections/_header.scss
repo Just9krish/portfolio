@@ -80,7 +80,12 @@
 }
 
 .desktop-header {
-  display: flex;
+  display: none;
+
+  @include breakpoints(medium) {
+    display: flex;
+  }
+
   justify-content: space-between;
   color: $primary-black;
   padding: rem(40);
