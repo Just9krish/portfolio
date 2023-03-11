@@ -57,8 +57,10 @@ export default function Showcase() {
                       </div>
                       <div className="showcase__card-tags-container">
                         <div className="showcase__card-tags">
-                          {project.techstack?.map((tech) => (
-                            <span className="showcase__card-tag">{tech}</span>
+                          {project.techstack?.map((tech, idx) => (
+                            <span className="showcase__card-tag" key={idx}>
+                              {tech}
+                            </span>
                           ))}
                         </div>
                       </div>

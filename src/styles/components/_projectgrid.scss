@@ -29,6 +29,10 @@
     border-bottom: 1px solid $repo-border;
   }
 
+  &__image {
+    display: block;
+  }
+
   &__content {
     padding: rem(15);
     padding-bottom: rem(20);

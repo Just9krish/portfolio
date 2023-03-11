@@ -3,13 +3,40 @@
 
   &__wrapper {
     font-size: $small-font-size;
-    padding: rem(16);
+    display: flex;
+    justify-content: center;
+
+    @include breakpoints(medium) {
+      justify-content: space-between;
+    }
+
+    align-items: center;
+    padding-block: rem(50);
+    padding-inline: rem(16);
 
     &-description {
-      text-align: center;
+      margin: 0;
 
       & a:hover {
         color: $primary-black--lighten;
+      }
+    }
+
+    &-action {
+      display: none;
+
+      @include breakpoints(medium) {
+        display: flex;
+        align-items: center;
+      }
+
+      &:hover {
+        color: $primary-black--lighten;
+      }
+
+      &-icon {
+        margin-right: rem(7);
+        font-size: rem(18);
       }
     }
   }

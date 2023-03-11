@@ -33,8 +33,8 @@ export default function Header() {
         <div className={`header__menu-items ${isOpen ? "active" : ""}`}>
           <nav className="menu">
             <ul className="menu__list">
-              {menus.map((menu) => (
-                <li className="menu__item">
+              {menus?.map((menu, idx) => (
+                <li className="menu__item" key={idx}>
                   <a href={`#${menu}`} onClick={() => setIsOpen(false)}>
                     {menu}
                   </a>
@@ -47,19 +47,19 @@ export default function Header() {
 
       {/* header for desktop */}
 
-      <header class="desktop-header">
-        <div class="desktop-header__logo">
+      <header className="desktop-header">
+        <div className="desktop-header__logo">
           <a href="/" aria-label="Home page">
             &lt;amit&gt;
           </a>
         </div>
-        <nav class="desktop-header__nav">
-          <ul class="desktop-header__menu">
-            {menus.map((menu) => (
-              <li class="desktop-header__menu-item">
+        <nav className="desktop-header__nav">
+          <ul className="desktop-header__menu">
+            {menus?.map((menu, idx) => (
+              <li className="desktop-header__menu-item" key={idx}>
                 <a
                   href={`#${menu}`}
-                  class="desktop-header__menu-link"
+                  className="desktop-header__menu-link"
                   aria-label={`Jump to ${menu} section`}
                 >
                   {menu}

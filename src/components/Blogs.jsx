@@ -47,8 +47,8 @@ export default function Blogs() {
         <h2 className="section-title dark-blue-text">Recent Posts</h2>
         <div className="posts">
           {posts.length > 0 ? (
-            posts.slice(0, 7).map((post) => (
-              <div className="post">
+            posts.slice(0, 7).map((post, idx) => (
+              <div className="post" key={idx}>
                 <div className="post-header">
                   <img
                     src={post.coverImage}

@@ -1,20 +1,16 @@
-import Hero from "./components/Herosection";
-import Showcase from "./components/Showcase";
-import Projects from "./components/Projects";
-import Blogs from "./components/Blogs";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Project from "./pages/Project";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <>
-      <Header />
-      <Hero />
-      <Showcase />
-      <Projects />
-      {/* <Blogs /> */}
-      <Contact />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/project" element={<Project />} />
+      </Routes>
       <Footer />
     </>
   );

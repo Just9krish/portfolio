@@ -2,24 +2,24 @@ import { Data as projects } from "../utils/ProjectsData";
 
 export default function ProjectsGrid() {
   return (
-    <div class="projects-grid">
+    <div className="projects-grid">
       {projects.map((project) => (
-        <div class="projects-grid__project" key={project.id}>
-          <div class="projects-grid__image-container">
+        <div className="projects-grid__project" key={project.id}>
+          <div className="projects-grid__image-container">
             <img
-              class="projects-grid__image"
+              className="projects-grid__image"
               src={project.image}
               alt={project.name}
             />
           </div>
-          <div class="projects-grid__content">
-            <h2 class="projects-grid__title">{project.name}</h2>
-            <p class="projects-grid__description">
+          <div className="projects-grid__content">
+            <h2 className="projects-grid__title">{project.name}</h2>
+            <p className="projects-grid__description">
               {project.brief.slice(0, 140)}.....
             </p>
-            <a class="projects-grid__link" href={project.repo}>
+            <a className="projects-grid__link" href={project.repo}>
               view project
-              <span class="sr-only">{project.name}</span>
+              <span className="sr-only">{project.name}</span>
             </a>
           </div>
         </div>

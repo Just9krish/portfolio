@@ -22,7 +22,7 @@ export default function Projects() {
     return colors[language.toLowerCase()] || "#000000";
   }
 
-  console.log(repos);
+  // console.log(repos);
 
   async function fetchRepo(url) {
     const res = await fetch(url);
@@ -67,19 +67,21 @@ export default function Projects() {
           </a>
         </div>
         <div className="projects__list">
-          {repos.slice(0, 6)?.map((repo) => (
+          {repos?.slice(0, 6)?.map((repo) => (
             <div className="projects__card" key={repo.id}>
-              <div className="projects__card-head">
-                <BiBookBookmark className="projects__card-icon" />
-                <a
-                  target="_blank"
-                  href={repo.html_url}
-                  className="projects__card-title"
-                >
-                  {repo.name}
-                </a>
+              <div>
+                <div className="projects__card-head">
+                  <BiBookBookmark className="projects__card-icon" />
+                  <a
+                    target="_blank"
+                    href={repo.html_url}
+                    className="projects__card-title"
+                  >
+                    {repo.name}
+                  </a>
+                </div>
+                <p className="projects__card-description">{repo.description}</p>
               </div>
-              <p className="projects__card-description">{repo.description}</p>
               <div className="projects__card-info">
                 <div className="projects__card-language">
                   <span

@@ -1,6 +1,5 @@
 .hero {
   @include breakpoints(medium) {
-    text-align: center;
   }
 
   &__title {
@@ -29,7 +28,7 @@
     color: $primary-black--lighten;
 
     @include breakpoints(large) {
-      margin-inline: auto;
+      // margin-inline: auto;
     }
   }
 }
