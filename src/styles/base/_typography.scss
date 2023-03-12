@@ -87,3 +87,12 @@ a:hover {
     max-width: rem(1320);
   }
 }
+
+.pinkish {
+  color: #a84e4f;
+  font-weight: 700;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

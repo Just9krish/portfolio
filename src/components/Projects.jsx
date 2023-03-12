@@ -1,5 +1,3 @@
-import { Data } from "../utils/ProjectsData";
-import Project from "./Project";
 import { BiBookBookmark, BiCalendarAlt } from "react-icons/bi";
 import { useEffect, useState } from "react";
 import { formatDistanceToNow } from "date-fns";

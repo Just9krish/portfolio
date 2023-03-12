@@ -21,7 +21,11 @@ export default function ProjectsGrid() {
               </p>
             </div>
             <div>
-              <NavLink to="/project" className="projects-grid__link">
+              <NavLink
+                to="/project"
+                state={project}
+                className="projects-grid__link"
+              >
                 view project
                 <span className="sr-only">{project.name}</span>
               </NavLink>
