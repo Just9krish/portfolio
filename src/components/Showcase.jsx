@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Data as projects } from "../utils/ProjectsData";
 import { VscTriangleLeft, VscTriangleRight } from "react-icons/vsc";
 import ProjectsGrid from "./ProjectsGrid";
+import { NavLink } from "react-router-dom";
 
 export default function Showcase() {
   const [slide, setSlide] = useState(0);
@@ -70,13 +71,14 @@ export default function Showcase() {
                   <p className="showcase__card-description">
                     {project.brief.slice(0, 200)}
                   </p>
-                  <a
-                    href="#"
-                    className="showcase__card-btn"
-                    aria-label="Link to project details"
-                  >
-                    view project
-                  </a>
+                  <NavLink to="/project">
+                    <p
+                      className="showcase__card-btn"
+                      aria-label="Link to project details"
+                    >
+                      view project
+                    </p>
+                  </NavLink>
                 </div>
               ))}
             </div>

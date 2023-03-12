@@ -24,7 +24,7 @@ export default function Herosection() {
         <a
           rel="noreferrer"
           className="cta-btn cta-btn--hero"
-          href="#"
+          href="./public/Amit Resume updated.pdf"
           target="_blank"
           aria-label="Download my resume"
         >

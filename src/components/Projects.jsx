@@ -22,7 +22,7 @@ export default function Projects() {
     return colors[language.toLowerCase()] || "#000000";
   }
 
-  // console.log(repos);
+  const githubOwner = repos[0]?.owner || { login: "Just9krish" };
 
   async function fetchRepo(url) {
     const res = await fetch(url);
@@ -54,13 +54,13 @@ export default function Projects() {
                 <div className="projects__avatar">
                   <img
                     className="projects__image"
-                    src="./profile.jpg"
+                    src={githubOwner.avatar_url}
                     alt="Profile picture of the owner"
                   />
                 </div>
                 <div className="projects__details">
-                  <p className="projects__name">Light yagimi</p>
-                  <p className="projects__subtitle">death&light</p>
+                  <p className="projects__name">Amit Vishwakarma</p>
+                  <p className="projects__subtitle">{githubOwner.login}</p>
                 </div>
               </div>
             </div>

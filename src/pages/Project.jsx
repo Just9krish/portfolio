@@ -1,5 +1,14 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Project() {
-  return <div>Project</div>;
+  return (
+    <section>
+      <div>
+        <NavLink to="/">
+          <button>back</button>
+        </NavLink>
+      </div>
+    </section>
+  );
 }
