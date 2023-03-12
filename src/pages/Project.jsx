@@ -1,10 +1,15 @@
 import { NavLink, useLocation } from "react-router-dom";
 import { BsChevronLeft } from "react-icons/bs";
+import { useEffect } from "react";
 
 export default function Project() {
   const location = useLocation();
 
   const { name, live, repo, techstack, id, image } = location.state;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
@@ -56,12 +61,20 @@ export default function Project() {
               <h4 className="section__list-title">Links</h4>
               <ul className="section__list">
                 <li className="section__list__item">
-                  <a className="section__list__item-link pinkish" href={live}>
+                  <a
+                    target="_blank"
+                    className="section__list__item-link pinkish"
+                    href={live}
+                  >
                     Live Site
                   </a>
                 </li>
                 <li className="section__list__item">
-                  <a className="section__list__item-link pinkish" href={repo}>
+                  <a
+                    target="_blank"
+                    className="section__list__item-link pinkish"
+                    href={repo}
+                  >
                     Repository
                   </a>
                 </li>
@@ -105,9 +118,15 @@ export default function Project() {
         <div className="section__block">
           <h4 className="section__subtitle">Useful resources</h4>
           <ul className="section__resource__list">
-            <li className="section__resource__list-item">we3bev</li>
-            <li className="section__resource__list-item">we3bev</li>
-            <li className="section__resource__list-item">we3bev</li>
+            <li className="section__resource__list-item">
+              <a href="#">wedsfdfs</a>
+            </li>
+            <li className="section__resource__list-item">
+              <a href="#">wedsfdfs</a>
+            </li>
+            <li className="section__resource__list-item">
+              <a href="#">wedsfdfs</a>
+            </li>
           </ul>
         </div>
       </div>

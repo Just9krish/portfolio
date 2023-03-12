@@ -58,7 +58,11 @@ export default function Contact() {
             </div>
           </div>
           <div className="contact__form-wrapper">
-            <form className="contact__form" action="">
+            <form
+              className="contact__form"
+              action="https://formspree.io/f/xpzelrpd"
+              method="POST"
+            >
               <h2 className="contact__form-title">Drop Me a Message</h2>
               <div className="contact__form-group">
                 <label htmlFor="name" className="sr-only">
@@ -66,10 +70,12 @@ export default function Contact() {
                 </label>
                 <input
                   id="name"
-                  className="contact__form-input"
+                  name="name"
+                  autoComplete="off"
                   type="text"
                   placeholder="Your Name *"
                   required
+                  className="contact__form-input"
                 />
               </div>
               <div className="contact__form-group">
@@ -78,10 +84,12 @@ export default function Contact() {
                 </label>
                 <input
                   id="email"
-                  className="contact__form-input"
+                  name="email"
+                  autoComplete="off"
                   type="email"
                   placeholder="Your Email *"
                   required
+                  className="contact__form-input"
                 />
               </div>
               <div className="contact__form-group">
@@ -90,9 +98,11 @@ export default function Contact() {
                 </label>
                 <textarea
                   id="message"
-                  className="contact__form-input contact__form-textaria"
+                  name="message"
+                  autoComplete="off"
                   placeholder="Your Message *"
                   required
+                  className="contact__form-input contact__form-textaria"
                 />
               </div>
               <div className="contact__form-group">

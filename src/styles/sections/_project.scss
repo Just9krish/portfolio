@@ -87,10 +87,14 @@
   }
 
   &__image {
+    display: block;
+
     &-container {
       position: relative;
       border-radius: rem(5);
       overflow: hidden;
+      box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+        rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     }
   }
 
@@ -99,5 +103,15 @@
     font-weight: 700;
     // margin-top: rem(100);
     // margin-bottom: rem(38);
+  }
+
+  &__resource__list-item {
+    margin-bottom: rem(9);
+
+    & > a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
