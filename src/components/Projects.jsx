@@ -1,24 +1,10 @@
 import { BiBookBookmark, BiCalendarAlt } from "react-icons/bi";
 import { useEffect, useState } from "react";
 import { formatDistanceToNow } from "date-fns";
+import getColor from "../helper/getColor";
 
 export default function Projects() {
   const [repos, setRepos] = useState([]);
-
-  function getColor(language) {
-    const colors = {
-      python: "#3572A5",
-      java: "#B07219",
-      javascript: "#F7DF1E",
-      c: "#555555",
-      cpp: "#F34B7D",
-      html: "#E34F26",
-      css: "#1572B6",
-      ejs: "#A91E50",
-      scss: "#C6538C",
-    };
-    return colors[language.toLowerCase()] || "#000000";
-  }
 
   const githubOwner = repos[0]?.owner || { login: "Just9krish" };
 

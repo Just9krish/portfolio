@@ -45,7 +45,8 @@
       transition: scale 500ms ease-in-out;
     }
 
-    &:hover &-img {
+    &:hover &-img,
+    &:focus &-img {
       scale: 1.25;
     }
 
@@ -83,17 +84,20 @@
       opacity: 0;
       backdrop-filter: blur(3px);
 
-      &:hover {
+      &:hover,
+      &:focus {
         color: $primary-black;
         background: #fff;
       }
     }
 
-    &:hover .showcase__card-tags-container {
+    &:hover .showcase__card-tags-container,
+    &:focus .showcase__card-tags-container {
       opacity: 1;
     }
 
-    &:hover .showcase__card-tag {
+    &:hover .showcase__card-tag,
+    &:focus .showcase__card-tag {
       opacity: 1;
     }
 

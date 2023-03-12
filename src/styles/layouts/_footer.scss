@@ -17,7 +17,8 @@
     &-description {
       margin: 0;
 
-      & a:hover {
+      & a:hover,
+      & a:focus {
         color: $primary-black--lighten;
       }
     }
@@ -30,7 +31,8 @@
         align-items: center;
       }
 
-      &:hover {
+      &:hover,
+      &:focus {
         color: $primary-black--lighten;
       }
 

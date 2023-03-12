@@ -1,6 +1,7 @@
 import { NavLink, useLocation } from "react-router-dom";
 import { BsChevronLeft } from "react-icons/bs";
 import { useEffect } from "react";
+import getColor from "../helper/getColor";
 
 export default function Project() {
   const location = useLocation();
@@ -51,7 +52,11 @@ export default function Project() {
               <h4 className="section__list-title">Techstack</h4>
               <ul className="section__list">
                 {techstack.map((tech, idx) => (
-                  <li className="section__list__item" key={idx}>
+                  <li
+                    className="section__list__item"
+                    style={{ color: `${getColor(tech)}` }}
+                    key={idx}
+                  >
                     {tech}
                   </li>
                 ))}

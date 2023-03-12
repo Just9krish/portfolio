@@ -141,7 +141,8 @@
         transition: all 200ms ease;
       }
 
-      &:hover {
+      &:hover,
+      &:focus {
         color: $primary-black;
         &::after {
           width: 100%;

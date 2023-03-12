@@ -39,11 +39,13 @@
   transition: all 250ms;
 }
 
-.cta-btn:hover {
+.cta-btn:hover,
+.cta-btn:focus {
   color: #e8e8e8;
 }
 
-.cta-btn:hover::before {
+.cta-btn:hover::before,
+.cta-btn:focus::before {
   width: 100%;
 }
 
