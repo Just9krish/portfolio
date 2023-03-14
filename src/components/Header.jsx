@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { BiMenuAltRight } from "react-icons/bi";
 import { GrClose } from "react-icons/gr";
+import { motion } from "framer-motion";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +11,12 @@ export default function Header() {
   return (
     <>
       {/* header for mobile */}
-      <header className="header">
+      <motion.header
+        initial={{ opacity: 0, y: -200 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ type: "spring", stiffness: 50, delay: 0.2 }}
+        className="header"
+      >
         <div className="header__logo" aria-label="Home page">{`<amit>`}</div>
         {!isOpen ? (
           <button
@@ -43,11 +49,16 @@ export default function Header() {
             </ul>
           </nav>
         </div>
-      </header>
+      </motion.header>
 
       {/* header for desktop */}
 
-      <header className="desktop-header">
+      <motion.header
+        initial={{ opacity: 0, y: -200 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ type: "spring", stiffness: 50, delay: 0.2 }}
+        className="desktop-header"
+      >
         <div className="desktop-header__logo">
           <a href="/" aria-label="Home page">
             &lt;amit&gt;
@@ -68,7 +79,7 @@ export default function Header() {
             ))}
           </ul>
         </nav>
-      </header>
+      </motion.header>
     </>
   );
 }
