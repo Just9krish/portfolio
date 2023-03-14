@@ -9,15 +9,8 @@
     @include breakpoints(large) {
       font-size: $big-font-size;
     }
-
-    & > span {
-      display: block;
-
-      @include breakpoints(large) {
-        display: inline;
-      }
-    }
   }
+
   &__discription {
     font-size: $default-font-size;
     font-weight: 300;
