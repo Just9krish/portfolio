@@ -1,9 +1,32 @@
 import { BsGithub } from "react-icons/bs";
 import { FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import useOnScrollAnimation from "../hooks/useOnScrollAnimation";
+import { motion } from "framer-motion";
+
+const sectionVariants = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+};
 
 export default function Contact() {
+  const isVisible = useOnScrollAnimation("contact");
+
   return (
-    <section id="contact" className="contact">
+    <motion.section
+      variants={sectionVariants}
+      animate={isVisible ? "visible" : "hidden"}
+      id="contact"
+      className="contact"
+    >
       <div className="container">
         <h2 className="contact__title">Contact!</h2>
         <div className="contact__content">
@@ -114,6 +137,6 @@ export default function Contact() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

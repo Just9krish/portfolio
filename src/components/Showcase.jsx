@@ -3,8 +3,26 @@ import { Data as projects } from "../utils/ProjectsData";
 import { VscTriangleLeft, VscTriangleRight } from "react-icons/vsc";
 import ProjectsGrid from "./ProjectsGrid";
 import { NavLink } from "react-router-dom";
+import useOnScrollAnimation from "../hooks/useOnScrollAnimation";
+import { motion } from "framer-motion";
+
+const sectionVariants = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+};
 
 export default function Showcase() {
+  const isVisible = useOnScrollAnimation("showcase");
+
   const [slide, setSlide] = useState(0);
 
   function changeSlide(direction) {
@@ -23,7 +41,12 @@ export default function Showcase() {
   }
 
   return (
-    <section className="showcase" id="showcase">
+    <motion.section
+      variants={sectionVariants}
+      animate={isVisible ? "visible" : "hidden"}
+      className="showcase"
+      id="showcase"
+    >
       <div className="container">
         <h2 className="showcase__title">Showcase.</h2>
         <div className="showcase__content">
@@ -117,6 +140,6 @@ export default function Showcase() {
           <ProjectsGrid />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

@@ -2,8 +2,27 @@ import { BiBookBookmark, BiCalendarAlt } from "react-icons/bi";
 import { useEffect, useState } from "react";
 import { formatDistanceToNow } from "date-fns";
 import getColor from "../helper/getColor";
+import useOnScrollAnimation from "../hooks/useOnScrollAnimation";
+import { motion } from "framer-motion";
+
+const sectionVariants = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 2,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+};
 
 export default function Projects() {
+  const isVisible = useOnScrollAnimation("projects");
+  console.log(isVisible);
+
   const [repos, setRepos] = useState([]);
 
   const githubOwner = repos[0]?.owner || { login: "Just9krish" };
@@ -19,7 +38,12 @@ export default function Projects() {
   }, []);
 
   return (
-    <section className="projects" id="projects">
+    <motion.section
+      variants={sectionVariants}
+      animate={isVisible ? "visible" : "hidden"}
+      className="projects"
+      id="projects"
+    >
       <div className="container">
         <div className="projects__content">
           <div className="projects__header">
@@ -87,6 +111,6 @@ export default function Projects() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

@@ -12,7 +12,7 @@ const sectionVariants = {
       type: "spring",
       mass: 0.4,
       damping: 8,
-      staggerChildren: 0.6,
+      staggerChildren: 0.5,
       when: "beforeChildren",
     },
   },
@@ -27,7 +27,7 @@ const paraVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.4,
     },
   },
 };
@@ -38,8 +38,6 @@ export default function Herosection() {
     "My primary interests lie in building web applications and Restful APIs.",
     "I am comfortable working with languages such as JavaScript, HTML, and CSS, and I am familiar with web frameworks like React, Node, and Express. Additionally, I have experience working with databases like MySQL and MongoDB.",
   ];
-
-  console.log("running");
 
   return (
     <motion.section
@@ -59,7 +57,7 @@ export default function Herosection() {
         {paraContent.map((para, idx) => (
           <motion.p
             variants={paraVariants}
-            transition={{ delay: idx * 0.5 }}
+            transition={{ delay: idx * 0.4 }}
             className="hero__discription"
             key={idx}
           >
@@ -68,11 +66,9 @@ export default function Herosection() {
         ))}
         <motion.div
           variants={paraVariants}
-          transition={{ delay: paraContent.length * 0.5 }}
+          transition={{ delay: paraContent.length * 0.4 }}
         >
           <a
-            variants={paraVariants}
-            transition={{ delay: paraContent.length * 3.5 }}
             key="resume-link"
             rel="noreferrer"
             className="cta-btn cta-btn--hero"

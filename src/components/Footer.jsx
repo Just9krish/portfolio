@@ -1,8 +1,31 @@
 import { BiEdit } from "react-icons/bi";
+import useOnScrollAnimation from "../hooks/useOnScrollAnimation";
+import { motion } from "framer-motion";
+
+const sectionVariants = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+};
 
 export default function Footer() {
+  const isVisible = useOnScrollAnimation("footer");
+
   return (
-    <footer className="footer">
+    <motion.footer
+      variants={sectionVariants}
+      animate={isVisible ? "visible" : "hidden"}
+      id="footer"
+      className="footer"
+    >
       <div className="container">
         <div className="footer__wrapper">
           <p className="footer__wrapper-description">
@@ -27,6 +50,6 @@ export default function Footer() {
           </a>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }
