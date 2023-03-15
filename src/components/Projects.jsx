@@ -10,18 +10,18 @@ const sectionVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 2,
+      duration: 1,
+      delay: 0.2,
     },
   },
   hidden: {
     opacity: 0,
-    y: 20,
+    y: 100,
   },
 };
 
 export default function Projects() {
   const isVisible = useOnScrollAnimation("projects");
-  console.log(isVisible);
 
   const [repos, setRepos] = useState([]);
 
