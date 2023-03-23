@@ -1,4 +1,8 @@
 export default function getColor(language) {
+  if (!language) {
+    return "#000000"; // or whatever default color you want to use
+  }
+
   const colors = {
     python: "#3572A5",
     java: "#B07219",
@@ -13,5 +17,6 @@ export default function getColor(language) {
     mongoose: "#9C4C4B",
     mongodb: "#429543",
   };
+
   return colors[language.toLowerCase()] || "#000000";
 }
