@@ -1,10 +1,7 @@
 import { BiEdit } from "react-icons/bi";
 import useOnScrollAnimation from "../hooks/useOnScrollAnimation";
-import { motion } from "framer-motion";
 
 export default function Footer() {
-  const isVisible = useOnScrollAnimation("footer");
-
   return (
     <footer id="footer" className="footer">
       <div className="container">
