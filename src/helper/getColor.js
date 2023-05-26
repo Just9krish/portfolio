@@ -14,7 +14,6 @@ export default function getColor(language) {
     mongodb: "#429543",
     typescript: "#2F74C0",
     python: "#3572A5",
-    java: "#B07219",
   };
 
   return colors[language.toLowerCase()] || "#000000";
