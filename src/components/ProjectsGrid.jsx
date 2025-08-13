@@ -33,7 +33,7 @@ export default function ProjectsGrid() {
             </div>
             <div>
               <NavLink
-                to="/project"
+                to={`/showcase/${project.slug}`}
                 state={project}
                 className="projects-grid__link"
               >

@@ -19,6 +19,8 @@
   &__logo {
     color: $primary-black;
     font-size: $default-font-size;
+    text-decoration: none;
+    font-weight: 600;
   }
 
   &__btn {
@@ -29,6 +31,8 @@
     position: relative;
     cursor: pointer;
     font-size: $default-font-size;
+    text-decoration: none;
+    color: $primary-black;
 
     & > svg {
       height: rem(15);
@@ -68,6 +72,23 @@
 
   &__title {
     font-size: rem(44);
+    margin-bottom: rem(30);
+    color: $primary-black;
+  }
+
+  &__description {
+    font-size: $default-font-size;
+    line-height: 1.6;
+    color: $primary-black--lighten-2;
+    margin-bottom: rem(16);
+  }
+
+  &__description-container {
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin: rem(20) 0;
+    }
   }
 
   &__list {
@@ -82,13 +103,27 @@
     }
 
     &__item {
-      font-size: $small-font-size;
-      margin-bottom: rem(7);
+      font-size: $default-font-size;
+      margin-bottom: rem(12);
+      color: $primary-black--lighten-2;
+      line-height: 1.5;
+      padding-left: rem(20);
+      position: relative;
+
+      &::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: $primary-black;
+        font-weight: bold;
+      }
     }
   }
 
   &__image {
     display: block;
+    width: 100%;
+    height: auto;
 
     &-container {
       position: relative;
@@ -102,8 +137,54 @@
   &__subtitle {
     font-size: $mid-font-size;
     font-weight: 700;
-    // margin-top: rem(100);
-    // margin-bottom: rem(38);
+    margin-bottom: rem(20);
+    color: $primary-black;
+  }
+
+  &__techstack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(12);
+    margin-top: rem(20);
+  }
+
+  &__tech-item {
+    padding: rem(8) rem(16);
+    border-radius: rem(20);
+    font-size: $small-font-size;
+    font-weight: 500;
+    text-align: center;
+    min-width: rem(80);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: rem(20);
+    margin-top: rem(20);
+    flex-wrap: wrap;
+  }
+
+  &__link-btn {
+    display: inline-block;
+    padding: rem(12) rem(24);
+    background-color: $primary-black;
+    color: #fff;
+    text-decoration: none;
+    border-radius: rem(6);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid $primary-black;
+
+    &:hover {
+      background-color: transparent;
+      color: $primary-black;
+    }
   }
 
   &__resource__list-item {

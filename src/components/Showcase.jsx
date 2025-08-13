@@ -64,9 +64,8 @@ export default function Showcase() {
               {projects?.map((project, idx) => (
                 <div
                   style={{
-                    minWidth: `${
-                      idx === slide ? "calc(100vw - 4rem)" : "100vw"
-                    }`,
+                    minWidth: `${idx === slide ? "calc(100vw - 4rem)" : "100vw"
+                      }`,
                     scale: `${idx === slide ? "1" : ".7"}`,
                   }}
                   className="showcase__card"
@@ -95,7 +94,7 @@ export default function Showcase() {
                   <p className="showcase__card-description">
                     {project.brief.slice(0, 200)}
                   </p>
-                  <NavLink to="/project">
+                  <NavLink to={`/showcase/${project.slug}`}>
                     <p
                       className="showcase__card-btn"
                       aria-label="Link to project details"
@@ -125,9 +124,8 @@ export default function Showcase() {
             <ul className="dot-controls">
               {projects?.map((project, idx) => (
                 <li
-                  className={`dot-controls__dot ${
-                    idx == slide ? "dot-active" : ""
-                  }`}
+                  className={`dot-controls__dot ${idx == slide ? "dot-active" : ""
+                    }`}
                   key={idx}
                   onClick={handleClick}
                   aria-label={`Slide ${idx + 1}`}

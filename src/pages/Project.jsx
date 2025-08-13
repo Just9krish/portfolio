@@ -1,140 +1,98 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useParams } from "react-router-dom";
 import { BsChevronLeft } from "react-icons/bs";
 import { useEffect } from "react";
 import getColor from "../helper/getColor";
+import { Data } from "../utils/ProjectsData";
+import Markdown from "../components/Markdown";
 
 export default function Project() {
-  const location = useLocation();
+  const { showcaseSlug } = useParams();
 
-  const { name, live, repo, techstack, id, image } = location.state;
+  const project = Data.find((project) => project.slug === showcaseSlug);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  if (!project) {
+    return <div>Project not found</div>;
+  }
+
+  const { name, live, repo, techstack, id, image, brief } = project;
+
 
   return (
     <>
+      {/* Project Header */}
       <header className="project-header">
         <div>
-          <div className="project-header__logo">
-            <a
-              href="/"
-              aria-label="Home page"
-              className="project-header__logo-link"
-            >
-              &lt;amit&gt;
-            </a>
-          </div>
-          <div>
-            <NavLink to="/" className="project-header__nav-link">
-              <div className="project-header__btn">
-                <BsChevronLeft /> back
-              </div>
-            </NavLink>
-          </div>
+          <NavLink to="/" className="project-header__logo">
+            Amit Vishwakarma
+          </NavLink>
+          <NavLink to="/" className="project-header__btn">
+            <BsChevronLeft />
+            Back to Portfolio
+          </NavLink>
         </div>
       </header>
-      <div className="section">
-        <h2 className="section__title">{name}</h2>
-        <div className="section__block">
-          <p className="section__text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga illo
-            nostrum magnam voluptatem minus consequuntur non magni! Provident
-            incidunt veritatis corrupti qui, similique mollitia odit repudiandae
-            consequuntur architecto maxime? Numquam explicabo iure ab
-            repellendus, impedit officiis. Unde repellat nihil quis minima
-            soluta aperiam eaque eius?
-          </p>
-        </div>
-        <div className="section__block">
-          <div className="section__list-container">
-            <div>
-              <h4 className="section__list-title">Techstack</h4>
-              <ul className="section__list">
-                {techstack.map((tech, idx) => (
-                  <li
-                    className="section__list__item"
-                    style={{ color: `${getColor(tech)}` }}
-                    key={idx}
-                  >
-                    {tech}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4 className="section__list-title">Links</h4>
-              <ul className="section__list">
-                <li className="section__list__item">
-                  <a
-                    target="_blank"
-                    className="section__list__item-link pinkish"
-                    href={live}
-                  >
-                    Live Site
-                  </a>
-                </li>
-                <li className="section__list__item">
-                  <a
-                    target="_blank"
-                    className="section__list__item-link pinkish"
-                    href={repo}
-                  >
-                    Repository
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
 
+      {/* Project Content */}
+      <section className="section">
+        {/* Project Title and Image */}
         <div className="section__block">
+          <h1 className="section__title">{name}</h1>
           <div className="section__image-container">
-            <img src={image} alt="" className="section__image" />
+            <img src={image} alt={name} className="section__image" />
           </div>
         </div>
 
+        {/* Project Description */}
         <div className="section__block">
-          <h4 className="section__subtitle">What I learned</h4>
-          <p className="section__text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-            sint quas quam! Cum autem modi totam ipsa, hic doloribus voluptas
-            maiores id deleniti sapiente sit aspernatur veniam consequatur
-            pariatur quaerat earum voluptate praesentium eius odit sint aliquid
-            provident natus vel maxime? Minus repellat magni maxime, rem quasi
-            quia tempora consequuntur aperiam sunt quisquam quibusdam maiores
-            accusamus repellendus, eos dolorum quod in placeat voluptas et
-            dolores ipsam sint cum ut id?
-          </p>
+          <div className="section__description-container">
+            <Markdown>{brief}</Markdown>
+          </div>
         </div>
 
+        {/* Tech Stack */}
         <div className="section__block">
-          <h4 className="section__subtitle">Continued development</h4>
-          <p className="section__text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, sequi
-            pariatur ratione, reiciendis quas illo molestias, aliquam nobis fuga
-            asperiores id! Delectus culpa libero provident cumque magnam
-            molestias fugit debitis eaque et autem. Laudantium officia, corrupti
-            recusandae earum, facere pariatur, obcaecati vitae ab minima hic
-            libero repellat veritatis. Eum, eveniet.
-          </p>
+          <h3 className="section__subtitle">Technologies Used</h3>
+          <div className="section__techstack">
+            {techstack.map((tech, index) => (
+              <span
+                key={index}
+                className="section__tech-item"
+                style={{
+                  backgroundColor: getColor(tech),
+                  color: tech.toLowerCase() === 'javascript' ? '#000' : '#fff'
+                }}
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
 
+        {/* Project Links */}
         <div className="section__block">
-          <h4 className="section__subtitle">Useful resources</h4>
-          <ul className="section__resource__list">
-            <li className="section__resource__list-item">
-              <a href="#">wedsfdfs</a>
-            </li>
-            <li className="section__resource__list-item">
-              <a href="#">wedsfdfs</a>
-            </li>
-            <li className="section__resource__list-item">
-              <a href="#">wedsfdfs</a>
-            </li>
-          </ul>
+          <h3 className="section__subtitle">Project Links</h3>
+          <div className="section__links">
+            {live !== "#" && (
+              <a
+                href={live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="section__link-btn"
+              >
+                View Live Demo
+              </a>
+            )}
+            <a
+              href={repo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="section__link-btn"
+            >
+              View Source Code
+            </a>
+          </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }

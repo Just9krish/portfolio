@@ -34,9 +34,9 @@ const paraVariants = {
 
 export default function Herosection() {
   const paraContent = [
-    "I am recent graduate from Mumbai University with a degree in Information Technology.",
-    "My primary interests lie in building web applications and Restful APIs.",
-    "I am comfortable working with languages such as JavaScript, HTML, and CSS, and I am familiar with web frameworks like React, Node, and Express. Additionally, I have experience working with databases like MySQL and MongoDB.",
+    "Hey there! 👋 I'm a passionate Full Stack Developer who loves turning ideas into reality through code.",
+    "With over 2 years of experience building web and mobile apps, I've got a knack for creating solutions that actually work in the real world.",
+    "When I'm not coding, you'll find me exploring new technologies, collaborating with awesome teams, and occasionally getting lost in the world of real-time features and API integrations.",
   ];
 
   return (
@@ -49,9 +49,9 @@ export default function Herosection() {
     >
       <div className="container">
         <h1 className="hero__title">
-          Hello,
+          Hi, I'm Amit! 👨‍💻
           <br />
-          My name is Amit.
+          <span className="hero__subtitle">Full Stack Developer</span>
         </h1>
 
         {paraContent.map((para, idx) => (
@@ -76,7 +76,7 @@ export default function Herosection() {
             target="_blank"
             aria-label="Download my resume"
           >
-            Get My Resume
+            Check Out My Resume
             <HiOutlineDownload />
           </a>
         </motion.div>
