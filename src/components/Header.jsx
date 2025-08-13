@@ -17,7 +17,9 @@ export default function Header() {
         transition={{ type: "spring", stiffness: 50, delay: 0.2 }}
         className="header"
       >
-        <div className="header__logo" aria-label="Home page">{`<amit>`}</div>
+        <div className="header__logo" aria-label="Home page">
+          &lt;amt&gt;
+        </div>
         {!isOpen ? (
           <button
             className="header__menu-button"

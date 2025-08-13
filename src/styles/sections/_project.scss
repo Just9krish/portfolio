@@ -10,7 +10,7 @@
   & > div {
     max-width: rem(950);
     margin-inline: auto;
-    padding: rem(40);
+    padding: rem(10);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,9 +18,10 @@
 
   &__logo {
     color: $primary-black;
-    font-size: $default-font-size;
+    font-size: $mid-font-size;
     text-decoration: none;
     font-weight: 600;
+    font-family: "JetBrains Mono", monospace;
   }
 
   &__btn {

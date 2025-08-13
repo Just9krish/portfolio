@@ -56,11 +56,11 @@ export default function Project() {
       <header className="project-header">
         <div>
           <NavLink to="/" className="project-header__logo">
-            Amit Vishwakarma
+            &lt;amit&gt;
           </NavLink>
           <NavLink to="/" className="project-header__btn">
             <BsChevronLeft />
-            Back to Portfolio
+            Back
           </NavLink>
         </div>
       </header>
